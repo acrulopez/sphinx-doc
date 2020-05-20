@@ -1,0 +1,486 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>BingMaps.BingMaps &mdash; Satellite Images Api Rest  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Satellite Images Api Rest
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../UserGuide.html">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../UserGuide.html#precondiciones">Precondiciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../UserGuide.html#inicializacion">Inicialización</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../UserGuide.html#funciones-del-sistema">Funciones del Sistema</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../UserGuide.html#getservices">getServices()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../UserGuide.html#def-getimage-provider-kwargs">def getImage(provider, **kwargs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../UserGuide.html#getmetadata-point-kwargs">getMetadata(point, **kwargs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../UserGuide.html#def-getpreview-provider-id-kwargs">def getPreview(provider, id, **kwargs)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../UserGuide.html#parametros-por-servicio">Parámetros por Servicio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../UserGuide.html#funciones-para-bing-maps">Funciones para Bing Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../UserGuide.html#funciones-para-google-maps">Funciones para Google Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../UserGuide.html#funciones-para-planet-labs">Funciones para Planet Labs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Dependencies.html">Dependencies of the project</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Dependencies.html#system-packages">System packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Dependencies.html#external-packages">External packages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../ModuleAdditionGuide.html">Module Addition Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ModuleAdditionGuide.html#creacion-del-modulo">Creación del módulo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ModuleAdditionGuide.html#implementacion-del-modulo">Implementación del módulo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ModuleAdditionGuide.html#fichero-de-configuracion">Fichero de configuración</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ModuleAdditionGuide.html#documentacion">Documentación</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Python Code Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Proxy.html">Proxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ApiRest.html">ApiRest</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../BingMaps.html">Bing Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GoogleMaps.html">Google Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PlanetLabs.html">Planet Labs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Utils</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Utils.html">Utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ApiExceptions.html">ApiExceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tests.html">Tests</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Satellite Images Api Rest</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>BingMaps.BingMaps</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for BingMaps.BingMaps</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Módulo BingMaps.</span>
+
+<span class="sd">Este módulo tiene funciones específicas para obtener imágenes</span>
+<span class="sd">del servicio Map Static API que ofrece Bing Maps.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+<span class="kn">import</span> <span class="nn">Utils</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">ApiExceptions</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<div class="viewcode-block" id="BingMaps"><a class="viewcode-back" href="../../BingMaps.html#BingMaps.BingMaps.BingMaps">[docs]</a><span class="k">class</span> <span class="nc">BingMaps</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Clase para acceder a imágenes del servicio Bing Maps</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        month_dict (dict): Diccionario para convertir meses en números</span>
+<span class="sd">        zoom_dict (dict): Diccionario con la conversión zoom-&gt;resolución</span>
+<span class="sd">        maxZoom (int): Zoom máximo que acepta Bing Maps</span>
+<span class="sd">        key (str): Clave para acceder a la API REST de Bing Maps</span>
+<span class="sd">        required_params (list[str]): Parámetros obligatorios para hacer consultas a Bing Maps</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">month_dict</span> <span class="o">=</span> <span class="p">{</span>  <span class="s1">&#39;Jan&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                        <span class="s1">&#39;Feb&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                        <span class="s1">&#39;Mar&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                        <span class="s1">&#39;Apr&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+                        <span class="s1">&#39;May&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+                        <span class="s1">&#39;Jun&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+                        <span class="s1">&#39;Jul&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+                        <span class="s1">&#39;Aug&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+                        <span class="s1">&#39;Sep&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+                        <span class="s1">&#39;Oct&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                        <span class="s1">&#39;Nov&#39;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+                        <span class="s1">&#39;Dec&#39;</span><span class="p">:</span> <span class="mi">12</span>	<span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">zoom_dict</span> <span class="o">=</span> <span class="p">{</span>   <span class="s2">&quot;1&quot;</span><span class="p">:</span> <span class="mf">78271.52</span><span class="p">,</span>
+                        <span class="s2">&quot;2&quot;</span><span class="p">:</span> <span class="mf">39135.76</span><span class="p">,</span>
+                        <span class="s2">&quot;3&quot;</span><span class="p">:</span> <span class="mf">19567.88</span><span class="p">,</span>
+                        <span class="s2">&quot;4&quot;</span><span class="p">:</span> <span class="mf">9783.94</span><span class="p">,</span>
+                        <span class="s2">&quot;5&quot;</span><span class="p">:</span> <span class="mf">4891.97</span><span class="p">,</span>
+                        <span class="s2">&quot;6&quot;</span><span class="p">:</span> <span class="mf">2445.98</span><span class="p">,</span>
+                        <span class="s2">&quot;7&quot;</span><span class="p">:</span> <span class="mf">1222.99</span><span class="p">,</span>
+                        <span class="s2">&quot;8&quot;</span><span class="p">:</span> <span class="mf">611.50</span><span class="p">,</span>
+                        <span class="s2">&quot;9&quot;</span><span class="p">:</span> <span class="mf">305.75</span><span class="p">,</span>
+                        <span class="s2">&quot;10&quot;</span><span class="p">:</span> <span class="mf">152.87</span><span class="p">,</span>
+                        <span class="s2">&quot;11&quot;</span><span class="p">:</span> <span class="mf">76.44</span><span class="p">,</span>
+                        <span class="s2">&quot;12&quot;</span><span class="p">:</span>	<span class="mf">38.22</span><span class="p">,</span>
+                        <span class="s2">&quot;13&quot;</span><span class="p">:</span>	<span class="mf">19.11</span><span class="p">,</span>
+                        <span class="s2">&quot;14&quot;</span><span class="p">:</span>	<span class="mf">9.55</span><span class="p">,</span>
+                        <span class="s2">&quot;15&quot;</span><span class="p">:</span>	<span class="mf">4.78</span><span class="p">,</span>
+                        <span class="s2">&quot;16&quot;</span><span class="p">:</span>	<span class="mf">2.39</span><span class="p">,</span>
+                        <span class="s2">&quot;17&quot;</span><span class="p">:</span>	<span class="mf">1.19</span><span class="p">,</span>
+                        <span class="s2">&quot;18&quot;</span><span class="p">:</span>	<span class="mf">0.60</span><span class="p">,</span>
+                        <span class="s2">&quot;19&quot;</span><span class="p">:</span>	<span class="mf">0.30</span><span class="p">,</span>
+                        <span class="s2">&quot;20&quot;</span><span class="p">:</span> <span class="mf">0.1493</span><span class="p">,</span>
+                        <span class="s2">&quot;21&quot;</span><span class="p">:</span> <span class="mf">0.0746</span><span class="p">,</span>
+                        <span class="s2">&quot;22&quot;</span><span class="p">:</span> <span class="mf">0.0373</span><span class="p">,</span>
+                        <span class="s2">&quot;23&quot;</span><span class="p">:</span> <span class="mf">0.0187</span>  <span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">maxZoom</span> <span class="o">=</span> <span class="mi">19</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">required_params</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;point&quot;</span><span class="p">,</span> <span class="s2">&quot;size&quot;</span><span class="p">,</span> <span class="s2">&quot;resolution&quot;</span><span class="p">,</span> <span class="s2">&quot;beforeDate&quot;</span><span class="p">,</span> <span class="s2">&quot;afterDate&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">key</span>
+
+
+<div class="viewcode-block" id="BingMaps.dataRequest"><a class="viewcode-back" href="../../BingMaps.html#BingMaps.BingMaps.BingMaps.dataRequest">[docs]</a>    <span class="k">def</span> <span class="nf">dataRequest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Función para obtener el link de una imagen y sus metadatos</span>
+
+<span class="sd">        Dados unos parámetros de entrada devuelve el link de la imagen</span>
+<span class="sd">        y sus metadatos en formato GeoJSON.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            user_params (dict[str-&gt;str]):</span>
+<span class="sd">                Diccionario con los valores de entrada del usuario.</span>
+
+<span class="sd">                - point</span>
+<span class="sd">                    - Descripción: Punto perteneciente a la imagen en latitud y longitud.</span>
+<span class="sd">                    - Formato: &quot;latitud,longitud&quot;</span>
+<span class="sd">                    - Ejemplo: &quot;41.800507792693544,-2.304528141507549&quot;</span>
+<span class="sd">                - size</span>
+<span class="sd">                    - Descripción: Tamaño en píxeles de la imagen.</span>
+<span class="sd">                    - Formato: &quot;altura,anchura&quot;</span>
+<span class="sd">                    - Ejemplo: &quot;1000,1000&quot;</span>
+<span class="sd">                - format</span>
+<span class="sd">                    - Descripción: Formato de la imagen.</span>
+<span class="sd">                - resolution</span>
+<span class="sd">                    - Descripción: Resolución máxima en metros/pixel de la imagen que queremos obtener.</span>
+<span class="sd">                    - Ejemplo: &quot;3.5&quot;</span>
+<span class="sd">                - beforeDate</span>
+<span class="sd">                    - Descripción: Obtener únicamente imágenes anteriores a la fecha dada.</span>
+<span class="sd">                    - Formato: &quot;dd-mm-aaaa&quot;</span>
+<span class="sd">                    - Ejemplo: &quot;12-09-2005&quot;</span>
+<span class="sd">                - afterDate</span>
+<span class="sd">                    - Descripción: Obtener únicamente imágenes posteriores a la fecha dada.</span>
+<span class="sd">                    - Formato: &quot;dd-mm-aaaa&quot;</span>
+<span class="sd">                    - Ejemplo: &quot;12-09-2005&quot;</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Tuple(str, dict[str-&gt;any]): Tupla con el link de la imagen y sus metadatos formato GeoJSON</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ParametersException: Si se han introducido erróneamente valores de entrada</span>
+<span class="sd">            ApiException: Si la consulta a Bing Maps ha dado error</span>
+<span class="sd">            NotFoundImage: Si no hay imagen disponible para los parámetros dados.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1">#Comprobamos que no falte ningún parámetro obligatorio</span>
+        <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">required_params</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">user_params</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ParametersException</span><span class="p">(</span><span class="s2">&quot;Error en Bing Maps: Se debe introducir el parámetro &#39;</span><span class="si">{}</span><span class="s2">&#39; en la consulta o establecer&quot;</span>
+                                <span class="s2">&quot;un valor predeterminado en el fichero de configuración.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">param</span><span class="p">))</span>
+
+        <span class="c1">#Convertimos el tamaño de str a int</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">size</span> <span class="o">=</span> <span class="n">user_params</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+            <span class="n">size</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ApiException</span><span class="p">(</span><span class="s2">&quot;Parámetro &#39;Size&#39; introducido erróneamente. El formato es: &#39;altura,anchura&#39;&quot;</span><span class="p">)</span>
+
+        <span class="c1">#Obtenemos la ruta del servidor y establecemos el zoom maximo</span>
+        <span class="n">server_route</span> <span class="o">=</span> <span class="s1">&#39;https://dev.virtualearth.net/REST/v1/Imagery/Metadata/Aerial&#39;</span>
+        <span class="n">current_zoom</span> <span class="o">=</span> <span class="n">user_params</span><span class="p">[</span><span class="s1">&#39;zoom&#39;</span><span class="p">]</span>
+
+        <span class="n">metadatos</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="n">request_link</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1">#Bucle para pedir una imagen de Bing Maps. Si de un zoom no tuviera, pediría del anterior hasta</span>
+        <span class="c1">#que encontrara una imagen o la resolución fuera mayor que la pedida.</span>
+        <span class="k">while</span> <span class="n">metadatos</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoom_dict</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">current_zoom</span><span class="p">)]</span> <span class="o">&lt;=</span> <span class="nb">float</span><span class="p">(</span><span class="n">user_params</span><span class="p">[</span><span class="s1">&#39;resolution&#39;</span><span class="p">])</span> <span class="ow">and</span> <span class="n">current_zoom</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+
+            <span class="n">request_link</span> <span class="o">=</span> <span class="n">server_route</span> <span class="o">+</span> \
+                         <span class="s1">&#39;/</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user_params</span><span class="p">[</span><span class="s1">&#39;point&#39;</span><span class="p">])</span> <span class="o">+</span> \
+                         <span class="s1">&#39;/</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">current_zoom</span><span class="p">)</span><span class="o">+</span> \
+                         <span class="s1">&#39;?mapSize=</span><span class="si">{}</span><span class="s1">,</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> \
+                         <span class="s1">&#39;&amp;key=</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">)</span>
+
+            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">request_link</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ApiException</span><span class="p">(</span><span class="s2">&quot;Error en Bing Maps: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">))</span>
+
+            <span class="n">res</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">resources</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;resourceSets&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;resources&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotFoundImage</span><span class="p">(</span><span class="s2">&quot;Error en Bing Maps: No hay imagen de este tipo para esta localizacion.&quot;</span><span class="p">)</span>
+            <span class="n">start_date</span> <span class="o">=</span> <span class="n">resources</span><span class="p">[</span><span class="s1">&#39;vintageStart&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">start_date</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">metadatos</span> <span class="o">=</span> <span class="n">res</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">current_zoom</span><span class="o">-=</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="n">metadatos</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotFoundImage</span><span class="p">(</span><span class="s2">&quot;Error en Bing Maps: No hay imagen de este tipo para esta localizacion.&quot;</span><span class="p">)</span>
+
+
+        <span class="c1">#Convertimos las fechas de str a date</span>
+        <span class="n">startDate</span> <span class="o">=</span> <span class="n">resources</span><span class="p">[</span><span class="s1">&#39;vintageStart&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="n">startDate</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">startDate</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="bp">self</span><span class="o">.</span><span class="n">month_dict</span><span class="p">[</span><span class="n">startDate</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="nb">int</span><span class="p">(</span><span class="n">startDate</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+        <span class="n">endDate</span> <span class="o">=</span> <span class="n">resources</span><span class="p">[</span><span class="s1">&#39;vintageEnd&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="n">endDate</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">endDate</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="bp">self</span><span class="o">.</span><span class="n">month_dict</span><span class="p">[</span><span class="n">endDate</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="nb">int</span><span class="p">(</span><span class="n">endDate</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+        <span class="c1">#Comprobamos si las fechas entran dentro del rango solicitado</span>
+        <span class="n">beforeDate</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">user_params</span><span class="p">[</span><span class="s1">&#39;beforeDate&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)]</span>
+        <span class="n">beforeDate</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="n">beforeDate</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">beforeDate</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">beforeDate</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">beforeDate</span> <span class="o">&lt;</span> <span class="n">endDate</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotFoundImage</span><span class="p">(</span><span class="s2">&quot;Error en Bing Maps: Fecha no disponible para esta imagen&quot;</span><span class="p">)</span>
+
+        <span class="n">afterDate</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">user_params</span><span class="p">[</span><span class="s1">&#39;afterDate&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)]</span>
+        <span class="n">afterDate</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="n">afterDate</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">afterDate</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">afterDate</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">afterDate</span> <span class="o">&gt;</span> <span class="n">startDate</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotFoundImage</span><span class="p">(</span><span class="s2">&quot;Error en Bing Maps: Fecha no disponible para esta imagen&quot;</span><span class="p">)</span>
+
+        <span class="c1">#Calculamos las coordenadas</span>
+        <span class="n">coords</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">user_params</span><span class="p">[</span><span class="s1">&#39;point&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)]</span>
+        <span class="n">geometry</span> <span class="o">=</span> <span class="n">Utils</span><span class="o">.</span><span class="n">centerCoordsToGeojsonGeometry</span><span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoom_dict</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">current_zoom</span><span class="p">)])</span>
+
+        <span class="c1">#Creamos el GeoJSON</span>
+        <span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;geometry&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;coordinates&quot;</span><span class="p">:</span> <span class="n">geometry</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;Bing Maps&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="s2">&quot;punto_central&quot;</span><span class="p">:</span> <span class="n">user_params</span><span class="p">[</span><span class="s1">&#39;point&#39;</span><span class="p">],</span>
+                <span class="s2">&quot;acquired_date&quot;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">&lt;-&gt;</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">startDate</span><span class="p">,</span> <span class="n">endDate</span><span class="p">),</span>
+                <span class="s2">&quot;download_date&quot;</span><span class="p">:</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">-%m-</span><span class="si">%G</span><span class="s2">&quot;</span><span class="p">),</span>
+                <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">,</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+                <span class="s2">&quot;resolution&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">zoom_dict</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">current_zoom</span><span class="p">)]</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">#Link de la imagen</span>
+        <span class="n">img_link</span> <span class="o">=</span> <span class="n">request_link</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;Metadata&quot;</span><span class="p">,</span><span class="s2">&quot;Map&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">img_link</span><span class="p">,</span> <span class="n">metadata</span></div>
+
+
+<div class="viewcode-block" id="BingMaps.getImage"><a class="viewcode-back" href="../../BingMaps.html#BingMaps.BingMaps.BingMaps.getImage">[docs]</a>    <span class="k">def</span> <span class="nf">getImage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Función para obtener una imagen y sus metadatos</span>
+
+<span class="sd">        Dados unos parámetros de entrada devuelve una imagen</span>
+<span class="sd">        en bytes y sus metadatos en formato GeoJSON.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            user_params (dict[str-&gt;str]): Diccionario con los valores de entrada</span>
+<span class="sd">                del usuario. Mismos parámetros que la función :py:meth:`BingMaps.BingMaps.dataRequest`</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Tuple(bytes, Dict[str-&gt;any]): Tupla con la imagen en bytes y sus metadatos formato GeoJSON</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">img_link</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataRequest</span><span class="p">(</span><span class="n">user_params</span><span class="p">)</span>
+
+        <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">img_link</span><span class="p">)</span>
+
+        <span class="c1">#Se ha producido un error</span>
+        <span class="k">if</span> <span class="n">resp</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ApiException</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">resp</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="n">metadata</span></div>
+
+
+<div class="viewcode-block" id="BingMaps.getMetadata"><a class="viewcode-back" href="../../BingMaps.html#BingMaps.BingMaps.BingMaps.getMetadata">[docs]</a>    <span class="k">def</span> <span class="nf">getMetadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Función para obtener los metadatos de una imagen</span>
+
+<span class="sd">        Dados unos parámetros de entrada devuelve los metadatos</span>
+<span class="sd">        de la imagen en formato GeoJSON.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            user_params (dict[str-&gt;any]): Diccionario con los valores de entrada</span>
+<span class="sd">                del usuario. Mismos parámetros que la función :py:meth:`BingMaps.BingMaps.dataRequest`</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list(dict[str-&gt;any]): Metadatos formato GeoJSON</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">img_link</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataRequest</span><span class="p">(</span><span class="n">user_params</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="n">metadata</span><span class="p">]</span></div></div>
+
+
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Alejandro de la Cruz López
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

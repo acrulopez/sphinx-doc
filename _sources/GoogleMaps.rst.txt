@@ -1,0 +1,8 @@
+Google Maps
+==================
+
+.. automodule:: GoogleMaps.GoogleMaps
+   :members:
+   :undoc-members:
+   :show-inheritance:
+

@@ -1,0 +1,30 @@
+****************************
+Dependencies of the project
+****************************
+
+Será necesario tener instalado Python 3.7.2 o superior.
+
+System packages
+----------------
+
+* sys
+* io
+* os
+* json
+* inspect
+* unittest
+* math
+
+External packages
+-----------------
+
+* `requests <https://pypi.org/project/requests/>`_
+* `flask <https://pypi.org/project/Flask/>`_
+* `importlib <https://pypi.org/project/importlib/>`_
+* `inspect <https://pypi.org/project/Flask-RESTful/>`_
+* `geojson <https://pypi.org/project/geojson/>`_
+* `datetime <https://pypi.org/project/DateTime/>`_
+* `planet <https://pypi.org/project/planet/>`_
+* `arrow <https://pypi.org/project/arrow/>`_
+
+

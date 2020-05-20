@@ -1,0 +1,7 @@
+ApiRest
+==============
+
+.. automodule:: ApiRest
+   :members:
+   :undoc-members:
+   :show-inheritance:

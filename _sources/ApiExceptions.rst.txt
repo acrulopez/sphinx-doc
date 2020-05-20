@@ -1,0 +1,7 @@
+ApiExceptions
+====================
+
+.. automodule:: ApiExceptions
+   :members:
+   :undoc-members:
+   :show-inheritance:

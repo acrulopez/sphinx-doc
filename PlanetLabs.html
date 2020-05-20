@@ -1,0 +1,600 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Planet Labs &mdash; Satellite Images Api Rest  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Utils" href="Utils.html" />
+    <link rel="prev" title="Google Maps" href="GoogleMaps.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Satellite Images Api Rest
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="UserGuide.html">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="UserGuide.html#precondiciones">Precondiciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UserGuide.html#inicializacion">Inicialización</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UserGuide.html#funciones-del-sistema">Funciones del Sistema</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#getservices">getServices()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#def-getimage-provider-kwargs">def getImage(provider, **kwargs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#getmetadata-point-kwargs">getMetadata(point, **kwargs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#def-getpreview-provider-id-kwargs">def getPreview(provider, id, **kwargs)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="UserGuide.html#parametros-por-servicio">Parámetros por Servicio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#funciones-para-bing-maps">Funciones para Bing Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#funciones-para-google-maps">Funciones para Google Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#funciones-para-planet-labs">Funciones para Planet Labs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Dependencies.html">Dependencies of the project</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Dependencies.html#system-packages">System packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Dependencies.html#external-packages">External packages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ModuleAdditionGuide.html">Module Addition Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ModuleAdditionGuide.html#creacion-del-modulo">Creación del módulo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModuleAdditionGuide.html#implementacion-del-modulo">Implementación del módulo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModuleAdditionGuide.html#fichero-de-configuracion">Fichero de configuración</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModuleAdditionGuide.html#documentacion">Documentación</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Python Code Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Proxy.html">Proxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApiRest.html">ApiRest</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Services</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="BingMaps.html">Bing Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GoogleMaps.html">Google Maps</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Planet Labs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Utils</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Utils.html">Utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApiExceptions.html">ApiExceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tests.html">Tests</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Satellite Images Api Rest</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Planet Labs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/PlanetLabs.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-PlanetLabs.PlanetLabs">
+<span id="planet-labs"></span><h1>Planet Labs<a class="headerlink" href="#module-PlanetLabs.PlanetLabs" title="Permalink to this headline">¶</a></h1>
+<p>Módulo PlanetLabs.</p>
+<p>Este módulo tiene funciones específicas para obtener imágenes
+del servicio Map Static API que ofrece Bing Maps.</p>
+<dl class="class">
+<dt id="PlanetLabs.PlanetLabs.PlanetLabs">
+<em class="property">class </em><code class="sig-prename descclassname">PlanetLabs.PlanetLabs.</code><code class="sig-name descname">PlanetLabs</code><span class="sig-paren">(</span><em class="sig-param">key</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/PlanetLabs/PlanetLabs.html#PlanetLabs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PlanetLabs.PlanetLabs.PlanetLabs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Clase para acceder a imágenes del servicio PlanetLabs</p>
+<dl class="attribute">
+<dt id="PlanetLabs.PlanetLabs.PlanetLabs.all_item_types">
+<code class="sig-name descname">all_item_types</code><a class="headerlink" href="#PlanetLabs.PlanetLabs.PlanetLabs.all_item_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>Todos los tipos de satélite de Planet Labs.
+Parámetro necesario para hacer consultas</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PlanetLabs.PlanetLabs.PlanetLabs.key">
+<code class="sig-name descname">key</code><a class="headerlink" href="#PlanetLabs.PlanetLabs.PlanetLabs.key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clave para acceder a la Api de Planet Labs</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PlanetLabs.PlanetLabs.PlanetLabs.client">
+<code class="sig-name descname">client</code><a class="headerlink" href="#PlanetLabs.PlanetLabs.PlanetLabs.client" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cliente inicializado para acceder al servicio de Planet Labs</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>ClientV1</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="PlanetLabs.PlanetLabs.PlanetLabs.required_params">
+<code class="sig-name descname">required_params</code><a class="headerlink" href="#PlanetLabs.PlanetLabs.PlanetLabs.required_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parámetros obligatorios para hacer consultas a Planet Labs</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PlanetLabs.PlanetLabs.PlanetLabs.dataRequest">
+<code class="sig-name descname">dataRequest</code><span class="sig-paren">(</span><em class="sig-param">user_params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/PlanetLabs/PlanetLabs.html#PlanetLabs.dataRequest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PlanetLabs.PlanetLabs.PlanetLabs.dataRequest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Función para obtener los metadatos de las imágenes coincidentes con los parámetros de entrada.</p>
+<p>Dados unos parámetros de entrada devuelve los metadatos que
+Planet Labs ofrece de las imágenes que coincidan con estos.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>user_params</strong> (<em>dict</em><em>[</em><em>str-&gt;str</em><em>]</em>) – <p>Diccionario con los valores de entrada del usuario.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>point</dt><dd><ul>
+<li><p>Descripción: Punto perteneciente a la imagen en latitud y longitud.</p></li>
+<li><p>Formato: “latitud,longitud”</p></li>
+<li><p>Ejemplo: “41.800507792693544,-2.304528141507549”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>resolution</dt><dd><ul>
+<li><p>Descripción: Resolución máxima en metros/pixel de la imagen que queremos obtener.</p></li>
+<li><p>Ejemplo: “3.5”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>beforeDate</dt><dd><ul>
+<li><p>Descripción: Obtener únicamente imágenes anteriores a la fecha dada.</p></li>
+<li><p>Formato: “dd-mm-aaaa”</p></li>
+<li><p>Ejemplo: “12-09-2005”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>afterDate</dt><dd><ul>
+<li><p>Descripción: Obtener únicamente imágenes posteriores a la fecha dada.</p></li>
+<li><p>Formato: “dd-mm-aaaa”</p></li>
+<li><p>Ejemplo: “12-09-2005”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>maxResults</dt><dd><ul>
+<li><p>Descripción: Número máximo de resultados que queremos obtener por servicio</p></li>
+<li><p>Ejemplo: “5”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>itemTypes</dt><dd><ul>
+<li><p>Descripción: Tipos de imágenes que se quiere que se devuelvan</p></li>
+<li><p>Ejemplo: “PSScene4Band,PSOrthoTile”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Diccionario con los metadatos de las imágenes devueltas</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict[str-&gt;any]</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="ApiExceptions.html#ApiExceptions.ParametersException" title="ApiExceptions.ParametersException"><strong>ParametersException</strong></a> – Si se han introducido erróneamente valores de entrada.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PlanetLabs.PlanetLabs.PlanetLabs.create_filter">
+<code class="sig-name descname">create_filter</code><span class="sig-paren">(</span><em class="sig-param">user_params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/PlanetLabs/PlanetLabs.html#PlanetLabs.create_filter"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PlanetLabs.PlanetLabs.PlanetLabs.create_filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Función para crear el filtro de Planet Labs</p>
+<p>Dados unos parámetros de entrada, devuelve los filtros
+utilizados por Planet Labs para poder hacer peticiones
+a su servicio REST.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>user_params</strong> (<em>dict</em><em>[</em><em>str-&gt;any</em><em>]</em>) – Diccionario con los valores de entrada
+del usuario. Mismos parámetros que la función <a class="reference internal" href="#PlanetLabs.PlanetLabs.PlanetLabs.dataRequest" title="PlanetLabs.PlanetLabs.PlanetLabs.dataRequest"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PlanetLabs.PlanetLabs.dataRequest()</span></code></a></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Lista de filtros</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list(filter)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PlanetLabs.PlanetLabs.PlanetLabs.get_asset">
+<code class="sig-name descname">get_asset</code><span class="sig-paren">(</span><em class="sig-param">id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/PlanetLabs/PlanetLabs.html#PlanetLabs.get_asset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PlanetLabs.PlanetLabs.PlanetLabs.get_asset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Función para obtener los assets de una imagen dada por su id.</p>
+<p>Dado un id, devuelve los links y metadatos de la imagen
+que corresponda a ese mismo id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – Id de la imagen</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Assets de la imagen</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict(any-&gt;any)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PlanetLabs.PlanetLabs.PlanetLabs.activate">
+<code class="sig-name descname">activate</code><span class="sig-paren">(</span><em class="sig-param">id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/PlanetLabs/PlanetLabs.html#PlanetLabs.activate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PlanetLabs.PlanetLabs.PlanetLabs.activate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Función para activar una imagen dado su id</p>
+<p>Dado un id, se activa la imagen para que el servicio
+valide y permita la descarga de la misma</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – Id de la imagen</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Assets de la imagen</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict(any-&gt;any)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PlanetLabs.PlanetLabs.PlanetLabs.getDownloadLink">
+<code class="sig-name descname">getDownloadLink</code><span class="sig-paren">(</span><em class="sig-param">id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/PlanetLabs/PlanetLabs.html#PlanetLabs.getDownloadLink"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PlanetLabs.PlanetLabs.PlanetLabs.getDownloadLink" title="Permalink to this definition">¶</a></dt>
+<dd><p>Función que devuelve el link de descarga de una imagen</p>
+<p>Dado un id, devuelve el link de descarga de esa imagen. Es
+necesario que previamente se active la misma para poder acceder
+a la descarga.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – Id de la imagen</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Link de descarga de la imagen o un mensaje con el estado
+de la imagen si no estuviera activada.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="ApiExceptions.html#ApiExceptions.NotActiveException" title="ApiExceptions.NotActiveException"><strong>NotActiveException</strong></a> – Si el recurso se está activando o no está activo</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PlanetLabs.PlanetLabs.PlanetLabs.getMetadata">
+<code class="sig-name descname">getMetadata</code><span class="sig-paren">(</span><em class="sig-param">user_params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/PlanetLabs/PlanetLabs.html#PlanetLabs.getMetadata"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PlanetLabs.PlanetLabs.PlanetLabs.getMetadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Función para obtener los metadatos de ciertas imágenes</p>
+<p>Dados unos parámetros de entrada devuelve los metadatos
+de las imagenes en formato GeoJSON. La diferencia con los
+metadatos que ofrece Planet Labs es que estos están
+seleccionados para una mejor visualización.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>user_params</strong> (<em>dict</em><em>[</em><em>str-&gt;any</em><em>]</em>) – Diccionario con los valores de entrada
+del usuario. Mismos parámetros que la función <a class="reference internal" href="#PlanetLabs.PlanetLabs.PlanetLabs.dataRequest" title="PlanetLabs.PlanetLabs.PlanetLabs.dataRequest"><code class="xref py py-meth docutils literal notranslate"><span class="pre">PlanetLabs.PlanetLabs.dataRequest()</span></code></a></p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Lista de metadatos formato GeoJSON</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list(dict[str-&gt;any])</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="ApiExceptions.html#ApiExceptions.ApiException" title="ApiExceptions.ApiException"><strong>ApiException</strong></a> – Si se produce un error en la API de Planet Labs</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PlanetLabs.PlanetLabs.PlanetLabs.getMetadataById">
+<code class="sig-name descname">getMetadataById</code><span class="sig-paren">(</span><em class="sig-param">id</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/PlanetLabs/PlanetLabs.html#PlanetLabs.getMetadataById"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PlanetLabs.PlanetLabs.PlanetLabs.getMetadataById" title="Permalink to this definition">¶</a></dt>
+<dd><p>Función para obtener los metadatos de ciertas imágenes</p>
+<p>Dados un id de una imagen, devuelve los metadatos
+de esta misma en formato GeoJSON.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – Id de la imagen</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Lista de metadatos formato GeoJSON</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict[str-&gt;any]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Mensaje de error si se produce una excepción</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference internal" href="ApiExceptions.html#ApiExceptions.ApiException" title="ApiExceptions.ApiException"><strong>ApiException</strong></a> – Si se produce un error en la API</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PlanetLabs.PlanetLabs.PlanetLabs.getImage">
+<code class="sig-name descname">getImage</code><span class="sig-paren">(</span><em class="sig-param">user_params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/PlanetLabs/PlanetLabs.html#PlanetLabs.getImage"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PlanetLabs.PlanetLabs.PlanetLabs.getImage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Función para obtener una imagen y sus metadatos</p>
+<p>Dado un diccionario con el parámetro id correspondiente
+al id de la imagen, devuelve la imagenen bytes y sus
+metadatos en formato GeoJson.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>user_params</strong> (<em>dict</em><em>[</em><em>str-&gt;any</em><em>]</em>) – Diccionario con el
+parámetro id.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Tupla con la imagen en bytes y sus metadatos formato GeoJSON</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple(bytes, Dict[str-&gt;any])</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="ApiExceptions.html#ApiExceptions.ApiException" title="ApiExceptions.ApiException"><strong>ApiException</strong></a> – Si se produce un error en la API</p></li>
+<li><p><a class="reference internal" href="ApiExceptions.html#ApiExceptions.ActivatingException" title="ApiExceptions.ActivatingException"><strong>ActivatingException</strong></a> – Si el recurso no está aun activo</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="PlanetLabs.PlanetLabs.PlanetLabs.getPreview">
+<code class="sig-name descname">getPreview</code><span class="sig-paren">(</span><em class="sig-param">user_params</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/PlanetLabs/PlanetLabs.html#PlanetLabs.getPreview"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#PlanetLabs.PlanetLabs.PlanetLabs.getPreview" title="Permalink to this definition">¶</a></dt>
+<dd><p>Función para obtener la miniatura de una imagen</p>
+<p>Dado el id de la imagen y una anchura se devuelve
+la imagen en formato png.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>user_params</strong> (<em>dict</em><em>[</em><em>str-&gt;str</em><em>]</em>) – <dl class="simple">
+<dt>Diccionario con los parámetros:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>Obligatorio:</dt><dd><ul>
+<li><dl class="simple">
+<dt>id</dt><dd><ul>
+<li><p>Descripción: Id de la imagen</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Opcional</dt><dd><ul>
+<li><dl class="simple">
+<dt>size</dt><dd><ul>
+<li><p>Descripción: Tamaño de la imagen</p></li>
+<li><p>Ejemplo: “2048,2048”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Imagen en bytes</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Bytes</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="ApiExceptions.html#ApiExceptions.ApiException" title="ApiExceptions.ApiException"><strong>ApiException</strong></a> – Si se produce un error en la API</p></li>
+<li><p><a class="reference internal" href="ApiExceptions.html#ApiExceptions.ParametersException" title="ApiExceptions.ParametersException"><strong>ParametersException</strong></a> – Si la anchura no entra dentro del rango posible.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Utils.html" class="btn btn-neutral float-right" title="Utils" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="GoogleMaps.html" class="btn btn-neutral float-left" title="Google Maps" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Alejandro de la Cruz López
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

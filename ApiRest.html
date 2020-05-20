@@ -1,0 +1,721 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ApiRest &mdash; Satellite Images Api Rest  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Bing Maps" href="BingMaps.html" />
+    <link rel="prev" title="Proxy" href="Proxy.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Satellite Images Api Rest
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="UserGuide.html">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="UserGuide.html#precondiciones">Precondiciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UserGuide.html#inicializacion">Inicialización</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UserGuide.html#funciones-del-sistema">Funciones del Sistema</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#getservices">getServices()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#def-getimage-provider-kwargs">def getImage(provider, **kwargs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#getmetadata-point-kwargs">getMetadata(point, **kwargs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#def-getpreview-provider-id-kwargs">def getPreview(provider, id, **kwargs)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="UserGuide.html#parametros-por-servicio">Parámetros por Servicio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#funciones-para-bing-maps">Funciones para Bing Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#funciones-para-google-maps">Funciones para Google Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#funciones-para-planet-labs">Funciones para Planet Labs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Dependencies.html">Dependencies of the project</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Dependencies.html#system-packages">System packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Dependencies.html#external-packages">External packages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ModuleAdditionGuide.html">Module Addition Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ModuleAdditionGuide.html#creacion-del-modulo">Creación del módulo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModuleAdditionGuide.html#implementacion-del-modulo">Implementación del módulo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModuleAdditionGuide.html#fichero-de-configuracion">Fichero de configuración</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModuleAdditionGuide.html#documentacion">Documentación</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Python Code Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Proxy.html">Proxy</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ApiRest</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="BingMaps.html">Bing Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GoogleMaps.html">Google Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PlanetLabs.html">Planet Labs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Utils</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Utils.html">Utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApiExceptions.html">ApiExceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tests.html">Tests</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Satellite Images Api Rest</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>ApiRest</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/ApiRest.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-ApiRest">
+<span id="apirest"></span><h1>ApiRest<a class="headerlink" href="#module-ApiRest" title="Permalink to this headline">¶</a></h1>
+<p>Aplicación REST para la descarga de imágenes de distintos servicios</p>
+<p>Esta aplicación permite descargar imágenes por satélite de servicios
+como Google Maps o Bing Maps. Los módulos implementados son independientes
+y es posible añadir más de forma transparente.</p>
+<p class="rubric">Example</p>
+<p>Para ejecutar este script se debe ejecutar en una terminal en la carpeta
+donde se almacene este archivo el siguiente código:</p>
+<blockquote>
+<div><p>$ python ApiRest.py</p>
+</div></blockquote>
+<p>Tras esto se podrán realizar llamadas a la API desde el servidor:</p>
+<blockquote>
+<div><p><a class="reference external" href="http://localhost:5000/">http://localhost:5000/</a></p>
+</div></blockquote>
+<dl class="attribute">
+<dt id="ApiRest.app">
+<code class="sig-prename descclassname">ApiRest.</code><code class="sig-name descname">app</code><a class="headerlink" href="#ApiRest.app" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instancia flask para dotar de servicios REST a la aplicación.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Flask</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ApiRest.api">
+<code class="sig-prename descclassname">ApiRest.</code><code class="sig-name descname">api</code><a class="headerlink" href="#ApiRest.api" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instancia de Api para añadir rutas de forma más simple a
+la aplicación.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Api</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ApiRest.servicios">
+<code class="sig-prename descclassname">ApiRest.</code><code class="sig-name descname">servicios</code><a class="headerlink" href="#ApiRest.servicios" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lista de servicios que están disponibles en la API.
+Se leen del fichero conf.json en la misma carpeta que este fichero.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ApiRest.ruta_modulos">
+<code class="sig-prename descclassname">ApiRest.</code><code class="sig-name descname">ruta_modulos</code><a class="headerlink" href="#ApiRest.ruta_modulos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ruta a cada uno de los módulos. Se leen del fichero
+conf.json</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ApiRest.modulos">
+<code class="sig-prename descclassname">ApiRest.</code><code class="sig-name descname">modulos</code><a class="headerlink" href="#ApiRest.modulos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Módulos importados para utilizarlos en este fichero.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list[module]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ApiRest.callable_services">
+<code class="sig-prename descclassname">ApiRest.</code><code class="sig-name descname">callable_services</code><a class="headerlink" href="#ApiRest.callable_services" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lista de instancias de las clases de cada
+uno de los servicios disponibles. Utilizado para hacer las llamadas a las
+distintas funciones de los módulos.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list[servicio]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="ApiRest.initialize">
+<code class="sig-prename descclassname">ApiRest.</code><code class="sig-name descname">initialize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ApiRest.html#initialize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ApiRest.initialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Función para inicializar los atributos de la aplicación</p>
+<p>Inicializa los parámetros del fichero para acceder a estos
+y poner en funcionamiento la API REST. Estos son: conf, servicios,
+ruta_modulos, modulos, api, app, callable_services</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="ApiRest.Servicios">
+<em class="property">class </em><code class="sig-prename descclassname">ApiRest.</code><code class="sig-name descname">Servicios</code><a class="reference internal" href="_modules/ApiRest.html#Servicios"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ApiRest.Servicios" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask_restful.Resource</span></code></p>
+<p>Clase para pedir la lista de servicios disponibles</p>
+<p>Mediante el comando GET en la ruta <strong>/getServices</strong> se accederá
+a la función get de esta clase que devuelve un diccionario
+con la lista de servicios en la clave ‘Servicios’.</p>
+<dl class="method">
+<dt id="ApiRest.Servicios.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ApiRest.html#Servicios.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ApiRest.Servicios.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ApiRest.Servicios.methods">
+<code class="sig-name descname">methods</code><em class="property"> = {'GET'}</em><a class="headerlink" href="#ApiRest.Servicios.methods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ApiRest.Image">
+<em class="property">class </em><code class="sig-prename descclassname">ApiRest.</code><code class="sig-name descname">Image</code><a class="reference internal" href="_modules/ApiRest.html#Image"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ApiRest.Image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask_restful.Resource</span></code></p>
+<p>Clase para obtener imágenes por satélite y sus metadatos de los servicios</p>
+<p>Esta clase llama a la función getImage para obtener una imagen del servicio
+especificado con los parámetros que se le hayan pasado en la consulta. Se puede
+acceder mediante la ruta <strong>/getImage</strong>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> (<em>dict</em><em>[</em><em>str-&gt;str</em><em>]</em>) – <p>Este parámetro se obtendrá de la consulta que se haga.
+Cada uno de los parámetros tendrán funciones generales o específicas para uno
+o más de los servicios. Se pueden insertar los siguientes parámetros:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Obligatorio:</dt><dd><ul>
+<li><dl class="simple">
+<dt>servicio</dt><dd><ul>
+<li><p>Descripción: Servicio del que se quiere obtener la imagen.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Obligatorio uno de ellos:</dt><dd><ul>
+<li><dl class="simple">
+<dt>id</dt><dd><ul>
+<li><p>Descripción: Id de la imagen</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>point</dt><dd><ul>
+<li><p>Descripción: Punto perteneciente a la imagen en latitud y longitud.</p></li>
+<li><p>Formato: “latitud,longitud”</p></li>
+<li><p>Ejemplo: “41.800507792693544,-2.304528141507549”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Opcionales:</dt><dd><ul>
+<li><dl class="simple">
+<dt>size</dt><dd><ul>
+<li><p>Descripción: Tamaño en píxeles de la imagen.</p></li>
+<li><p>Formato: “altura,anchura”</p></li>
+<li><p>Ejemplo: “1000,1000”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>format</dt><dd><ul>
+<li><p>Descripción: Formato de la imagen.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>resolution</dt><dd><ul>
+<li><p>Descripción: Resolución máxima en metros/pixel de la imagen que queremos obtener.</p></li>
+<li><p>Ejemplo: “3.5”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>beforeDate</dt><dd><ul>
+<li><p>Descripción: Obtener únicamente imágenes anteriores a la fecha dada.</p></li>
+<li><p>Formato: “dd-mm-aaaa”</p></li>
+<li><p>Ejemplo: “12-09-2005”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>afterDate</dt><dd><ul>
+<li><p>Descripción: Obtener únicamente imágenes posteriores a la fecha dada.</p></li>
+<li><p>Formato: “dd-mm-aaaa”</p></li>
+<li><p>Ejemplo: “12-09-2005”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>maxResults</dt><dd><ul>
+<li><p>Descripción: Número máximo de resultados que queremos obtener por servicio</p></li>
+<li><p>Ejemplo: “5”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>itemTypes</dt><dd><ul>
+<li><p>Descripción: Tipos de imágenes que se quiere que se devuelvan</p></li>
+<li><p>Ejemplo: “PSScene4Band,PSOrthoTile”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Respuesta con la imagen solicitada en bytes con los metadatos
+en la cabecera y el código HTTP 200.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Response</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Respuesta con el estado de una imagen que se ha solicitado descargar
+pero necesita tiempo su activación y el código HTTP 202.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Response</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Respuesta con un mensaje de error si alguno ha ocurrido con
+el código HTTP 400.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Response</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="ApiRest.Image.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ApiRest.html#Image.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ApiRest.Image.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ApiRest.Image.methods">
+<code class="sig-name descname">methods</code><em class="property"> = {'GET'}</em><a class="headerlink" href="#ApiRest.Image.methods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ApiRest.Metadata">
+<em class="property">class </em><code class="sig-prename descclassname">ApiRest.</code><code class="sig-name descname">Metadata</code><a class="reference internal" href="_modules/ApiRest.html#Metadata"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ApiRest.Metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask_restful.Resource</span></code></p>
+<p>Clase para obtener metadatos de imágenes que coincidan con los parámetros</p>
+<p>Esta clase llama a la función getMetadadata de uno o varios servicios para
+obtener los metadatos de la imágenes coincidentes con los parámetros dados
+en la consulta. Se puede acceder mediante la ruta <strong>/getMetadata</strong>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> (<em>dict</em><em>[</em><em>str-&gt;str</em><em>]</em>) – <p>Este parámetro se obtendrá de la consulta que se haga.
+Cada uno de los parámetros tendrán funciones generales o específicas para uno
+o más de los servicios. Se pueden insertar los siguientes parámetros:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Obligatorio:</dt><dd><ul>
+<li><dl class="simple">
+<dt>point</dt><dd><ul>
+<li><p>Descripción: Punto perteneciente a la imagen en latitud y longitud.</p></li>
+<li><p>Formato: “latitud,longitud”</p></li>
+<li><p>Ejemplo: “41.800507792693544,-2.304528141507549”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Opcional:</dt><dd><ul>
+<li><dl class="simple">
+<dt>servicio</dt><dd><ul>
+<li><p>Descripción: Servicio  o servicios de los que se quieren obtener metadatos.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>size</dt><dd><ul>
+<li><p>Descripción: Tamaño en píxeles de la imagen.</p></li>
+<li><p>Formato: “altura,anchura”</p></li>
+<li><p>Ejemplo: “1000,1000”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>format</dt><dd><ul>
+<li><p>Descripción: Formato de la imagen.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>resolution</dt><dd><ul>
+<li><p>Descripción: Resolución máxima en metros/pixel de la imagen que queremos obtener.</p></li>
+<li><p>Ejemplo: “3.5”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>beforeDate</dt><dd><ul>
+<li><p>Descripción: Obtener únicamente imágenes anteriores a la fecha dada.</p></li>
+<li><p>Formato: “dd-mm-aaaa”</p></li>
+<li><p>Ejemplo: “12-09-2005”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>afterDate</dt><dd><ul>
+<li><p>Descripción: Obtener únicamente imágenes posteriores a la fecha dada.</p></li>
+<li><p>Formato: “dd-mm-aaaa”</p></li>
+<li><p>Ejemplo: “12-09-2005”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>maxResults</dt><dd><ul>
+<li><p>Descripción: Resolución máxima en metros/pixel de la imagen que queremos obtener.</p></li>
+<li><p>Ejemplo: “3.5”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>itemTypes</dt><dd><ul>
+<li><p>Descripción: Tipos de imágenes que se quiere que se devuelvan</p></li>
+<li><p>Ejemplo: “PSScene4Band,PSOrthoTile”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Respuesta con  con los metadatos en formato GeoJSON
+y el código HTTP 200.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Response</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Respuesta con un mensaje de error si alguno ha ocurrido con
+el código HTTP 400.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Response</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="ApiRest.Metadata.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ApiRest.html#Metadata.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ApiRest.Metadata.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ApiRest.Metadata.methods">
+<code class="sig-name descname">methods</code><em class="property"> = {'GET'}</em><a class="headerlink" href="#ApiRest.Metadata.methods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ApiRest.ImagePreview">
+<em class="property">class </em><code class="sig-prename descclassname">ApiRest.</code><code class="sig-name descname">ImagePreview</code><a class="reference internal" href="_modules/ApiRest.html#ImagePreview"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ApiRest.ImagePreview" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">flask_restful.Resource</span></code></p>
+<p>Clase para obtener la previsualización de una imagen dado su id</p>
+<p>Esta clase llama a la función getPreview para obtener una imagen del servicio
+especificado con el id especificado en la consulta. Se puede acceder mediante
+la ruta <strong>/getPreview</strong>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> (<em>dict</em><em>[</em><em>str-&gt;str</em><em>]</em>) – <p>Este parámetro se obtendrá de la consulta que se haga.
+Se pueden incluir los siguientes parámetros en la consulta:</p>
+<ul>
+<li><dl class="simple">
+<dt>Obligatorio:</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>servicio</dt><dd><ul>
+<li><p>Tipo: str</p></li>
+<li><p>Descripción: Servicio del que se quiere obtener la imagen.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>id.</dt><dd><ul>
+<li><p>Tipo: str</p></li>
+<li><p>Descripción: Id de la imagen que se quiere previsualizar</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Opcional:</dt><dd><dl class="option-list">
+<dt><kbd><span class="option">-s<var>ize</var></span></kbd></dt>
+<dd><ul class="simple">
+<li><p>Tipo: str</p></li>
+<li><p>Descripción: Altura y anchura en píxeles de la imagen</p></li>
+<li><p>Ejemplo: “2048,2048”.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Respuesta con la imagen solicitada en bytes con los metadatos
+en la cabecera y el código HTTP 200.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Response</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Respuesta con un mensaje de error si alguno ha ocurrido con
+el código HTTP 400.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Response</p>
+</dd>
+</dl>
+<dl class="method">
+<dt id="ApiRest.ImagePreview.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ApiRest.html#ImagePreview.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ApiRest.ImagePreview.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ApiRest.ImagePreview.methods">
+<code class="sig-name descname">methods</code><em class="property"> = {'GET'}</em><a class="headerlink" href="#ApiRest.ImagePreview.methods" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="BingMaps.html" class="btn btn-neutral float-right" title="Bing Maps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Proxy.html" class="btn btn-neutral float-left" title="Proxy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Alejandro de la Cruz López
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

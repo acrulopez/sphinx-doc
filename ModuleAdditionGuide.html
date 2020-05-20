@@ -1,0 +1,300 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Module Addition Guide &mdash; Satellite Images Api Rest  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Proxy" href="Proxy.html" />
+    <link rel="prev" title="Dependencies of the project" href="Dependencies.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Satellite Images Api Rest
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="UserGuide.html">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="UserGuide.html#precondiciones">Precondiciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UserGuide.html#inicializacion">Inicialización</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UserGuide.html#funciones-del-sistema">Funciones del Sistema</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#getservices">getServices()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#def-getimage-provider-kwargs">def getImage(provider, **kwargs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#getmetadata-point-kwargs">getMetadata(point, **kwargs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#def-getpreview-provider-id-kwargs">def getPreview(provider, id, **kwargs)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="UserGuide.html#parametros-por-servicio">Parámetros por Servicio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#funciones-para-bing-maps">Funciones para Bing Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#funciones-para-google-maps">Funciones para Google Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#funciones-para-planet-labs">Funciones para Planet Labs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Dependencies.html">Dependencies of the project</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Dependencies.html#system-packages">System packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Dependencies.html#external-packages">External packages</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Module Addition Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#creacion-del-modulo">Creación del módulo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#implementacion-del-modulo">Implementación del módulo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fichero-de-configuracion">Fichero de configuración</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#documentacion">Documentación</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Python Code Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Proxy.html">Proxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApiRest.html">ApiRest</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="BingMaps.html">Bing Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GoogleMaps.html">Google Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PlanetLabs.html">Planet Labs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Utils</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Utils.html">Utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApiExceptions.html">ApiExceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tests.html">Tests</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Satellite Images Api Rest</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Module Addition Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/ModuleAdditionGuide.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-addition-guide">
+<h1>Module Addition Guide<a class="headerlink" href="#module-addition-guide" title="Permalink to this headline">¶</a></h1>
+<p>En este documento se explicará el proceso que se debe llevar a cabo para añadir un nuevo módulo al sistema.</p>
+<div class="section" id="creacion-del-modulo">
+<h2>Creación del módulo<a class="headerlink" href="#creacion-del-modulo" title="Permalink to this headline">¶</a></h2>
+<p>En primer lugar se deberá crear en la carpeta raíz del proyecto una nueva carpeta con el nombre del módulo y, dentro de esta, el fichero .py del módulo y un fichero __init__.py vacío.</p>
+</div>
+<div class="section" id="implementacion-del-modulo">
+<h2>Implementación del módulo<a class="headerlink" href="#implementacion-del-modulo" title="Permalink to this headline">¶</a></h2>
+<p>En el fichero {modulo}.py se creará una clase con el mismo nombre del fichero y de la carpeta contenedora y el constructor se incluirá el parámetro “key” de la siguiente manera:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>def __init__(self, key):
+</pre></div>
+</div>
+<p>Es irrelevante si el servicio que se está implementando hace uso de esta clave o no, pero el parámetro se ha de añadir.</p>
+<p>Esta clase se compondrá de las funciones <strong>getImage</strong> y <strong>getMetadata</strong>. Opcionalmente se podrá incluir también <strong>getPreview</strong>.</p>
+<p>Las tres funciones recibirán un único parámetro que será un diccionario con los parámetros insertados por el usuario cuando realice una llamada al sistema. Es conveniente llamar a este parámetro <em>user_params</em> para mantener la consistencia entre módulos.</p>
+<p>La función <strong>getImage</strong> devolverá dos valores. El primero será una imagen en <em>bytes</em> y el segundo será un string con los metadatos de dicha imagen en formato <em>GeoJSON</em>.
+La función <strong>getMetadata</strong> una lista <em>strings</em>. Cada uno de estos serán los metadatos de las imágenes que coincidan con los parámetros que haya insertado el usuario. Aunque se encuentre únicamente una imagen que coincida con la búsqueda, se devolverán dichos metadatos dentro de una lista.
+La función <strong>getPreview</strong> devolverá la imagen solicitada en bytes.</p>
+<p>En caso de que se produzca algún error durante el código será responsabilidad del programador manejar correctamente dicha excepción y lanzar una de las excepciones que el sistema acepta. Estas se encuentran en el módulo <strong>ApiExceptions.py</strong>. Si no se encontrara algún dato que el usuario solicita como imágenes o metadatos se lanzaría una excepción del tipo ApiException con el mensaje de error correspondiente.
+Es posible añadir nuevas excepciones al sistema para usarlas en el módulo que está siendo creado. Para ello se deben añadir al fichero ApiExceptions y heredar de la clase implementada en ese mismo módulo denominada ApiException.</p>
+</div>
+<div class="section" id="fichero-de-configuracion">
+<h2>Fichero de configuración<a class="headerlink" href="#fichero-de-configuracion" title="Permalink to this headline">¶</a></h2>
+<p>En el fichero de configuración se ha de añadir en la clave <em>servicios</em> el nombre del módulo que se está implementando y su ruta separado por el carácter: /. También se añadirá su clave en el apartado <em>keys</em>. Esto se deberá realizar aunque no se haga uso de clave. En este caso incluir un string en blanco. También se añadirán los parámetros por defecto que se consideren oportunos para el propio módulo. Vemos el formato de este fichero a continuación:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span> {
+&quot;server&quot;: &quot;http://localhost:5000/&quot;,
+&quot;servicios&quot;:{
+      &quot;bingmaps&quot;:&quot;BingMaps/BingMaps&quot;,
+      &quot;googlemaps&quot;: &quot;GoogleMaps/GoogleMaps&quot;,
+      &quot;planetlabs&quot;: &quot;PlanetLabs/PlanetLabs&quot;
+},
+&quot;keys&quot;:{
+      &quot;bingmaps&quot;:&quot;XXXXXXXXXXXXXXXXXXXXXXXXXX&quot;,
+      &quot;googlemaps&quot;: &quot;XXXXXXXXXXXXXXXXXXXXXXXXXX&quot;,
+      &quot;planetlabs&quot;: &quot;XXXXXXXXXXXXXXXXXXXXXXXXXX&quot;
+},
+&quot;defaultParameters&quot;:{
+              &quot;size&quot;: &quot;640,640&quot;,
+              &quot;resolution&quot;: &quot;35&quot;,
+              &quot;maxResults&quot;: &quot;1&quot;,
+              &quot;format&quot;: &quot;png&quot;,
+              &quot;beforeDate&quot;: &quot;31-12-2040&quot;,
+              &quot;afterDate&quot;:&quot;01-01-1970&quot;
+              }
+ }
+</pre></div>
+</div>
+</div>
+<div class="section" id="documentacion">
+<h2>Documentación<a class="headerlink" href="#documentacion" title="Permalink to this headline">¶</a></h2>
+<p>Se deberá documentar el módulo, la clase del módulo y todas las funciones que lo compongan, así como cualquier código añadido a cualquier otro módulo. Esta documentación seguirá el formato <strong>Google Docstring</strong> para mantener la consistencia en el sistema. También se deberá añadir a la guía de usuario encontrada en la documentación de Sphinx los parámetros que aceptaría dicho módulo, como está especificado para los demás.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Proxy.html" class="btn btn-neutral float-right" title="Proxy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Dependencies.html" class="btn btn-neutral float-left" title="Dependencies of the project" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Alejandro de la Cruz López
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

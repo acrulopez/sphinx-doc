@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tests.Tests &mdash; Satellite Images Api Rest  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Satellite Images Api Rest
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../UserGuide.html">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../UserGuide.html#precondiciones">Precondiciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../UserGuide.html#inicializacion">Inicialización</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../UserGuide.html#funciones-del-sistema">Funciones del Sistema</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../UserGuide.html#getservices">getServices()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../UserGuide.html#def-getimage-provider-kwargs">def getImage(provider, **kwargs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../UserGuide.html#getmetadata-point-kwargs">getMetadata(point, **kwargs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../UserGuide.html#def-getpreview-provider-id-kwargs">def getPreview(provider, id, **kwargs)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../UserGuide.html#parametros-por-servicio">Parámetros por Servicio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../UserGuide.html#funciones-para-bing-maps">Funciones para Bing Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../UserGuide.html#funciones-para-google-maps">Funciones para Google Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../UserGuide.html#funciones-para-planet-labs">Funciones para Planet Labs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Dependencies.html">Dependencies of the project</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Dependencies.html#system-packages">System packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Dependencies.html#external-packages">External packages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../ModuleAdditionGuide.html">Module Addition Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ModuleAdditionGuide.html#creacion-del-modulo">Creación del módulo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ModuleAdditionGuide.html#implementacion-del-modulo">Implementación del módulo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ModuleAdditionGuide.html#fichero-de-configuracion">Fichero de configuración</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ModuleAdditionGuide.html#documentacion">Documentación</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Python Code Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Proxy.html">Proxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ApiRest.html">ApiRest</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../BingMaps.html">Bing Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GoogleMaps.html">Google Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PlanetLabs.html">Planet Labs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Utils</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Utils.html">Utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ApiExceptions.html">ApiExceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tests.html">Tests</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Satellite Images Api Rest</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>Tests.Tests</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for Tests.Tests</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Tests para la API REST Satellite Images</span>
+
+<span class="sd">    En este módulo se encuentran los test para cada uno</span>
+<span class="sd">    de los servicios implementados en la API además de</span>
+<span class="sd">    tests para las funciones genéricas de esta misma.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">unittest</span>
+<span class="kn">import</span> <span class="nn">Proxy</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<div class="viewcode-block" id="TestApiRest"><a class="viewcode-back" href="../../Tests.html#Tests.Tests.TestApiRest">[docs]</a><span class="k">class</span> <span class="nc">TestApiRest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+<div class="viewcode-block" id="TestApiRest.test_getServices"><a class="viewcode-back" href="../../Tests.html#Tests.Tests.TestApiRest.test_getServices">[docs]</a>    <span class="k">def</span> <span class="nf">test_getServices</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test para la función getServices</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">services_str</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getServices</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">services_str</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+
+        <span class="n">services_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">services_str</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">services_dict</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TestApiRest.test_getImage_planetlabs"><a class="viewcode-back" href="../../Tests.html#Tests.Tests.TestApiRest.test_getImage_planetlabs">[docs]</a>    <span class="k">def</span> <span class="nf">test_getImage_planetlabs</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test para la función getImage con el servicio Planet Labs</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1">#Debería devolver la imagen</span>
+        <span class="n">img1</span><span class="p">,</span> <span class="n">metadata1</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getImage</span><span class="p">(</span><span class="s2">&quot;planetlabs&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;S2A_MSIL1C_20200318T071621_N0209_R006_T37MHT_20200318T093056&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">metadata1</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+
+        <span class="c1">#Debería devolver el mensaje de error y null</span>
+        <span class="n">img1</span><span class="p">,</span> <span class="n">metadata1</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getImage</span><span class="p">(</span><span class="s2">&quot;planetlabs&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsNone</span><span class="p">(</span><span class="n">metadata1</span><span class="p">)</span>
+
+        <span class="c1">#Debería devolver el mensaje de error y null</span>
+        <span class="n">img1</span><span class="p">,</span> <span class="n">metadata1</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getImage</span><span class="p">(</span><span class="s2">&quot;planetlabs&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;id inventado&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsNone</span><span class="p">(</span><span class="n">metadata1</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TestApiRest.test_getImage_googlemaps"><a class="viewcode-back" href="../../Tests.html#Tests.Tests.TestApiRest.test_getImage_googlemaps">[docs]</a>    <span class="k">def</span> <span class="nf">test_getImage_googlemaps</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test para la función getImage con el servicio Google Maps</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Debería devolver la imagen</span>
+        <span class="n">img1</span><span class="p">,</span> <span class="n">metadata1</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getImage</span><span class="p">(</span><span class="s2">&quot;googlemaps&quot;</span><span class="p">,</span> <span class="n">point</span><span class="o">=</span><span class="s2">&quot;40.714728,-73.9986729&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">metadata1</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+
+        <span class="c1">#Debería devolver el mensaje de error y null porque falta el parámetro &quot;point&quot;</span>
+        <span class="n">img1</span><span class="p">,</span> <span class="n">metadata1</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getImage</span><span class="p">(</span><span class="s2">&quot;googlemaps&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsNone</span><span class="p">(</span><span class="n">metadata1</span><span class="p">)</span>
+
+        <span class="c1">#Debería devolver la imagen</span>
+        <span class="n">img1</span><span class="p">,</span> <span class="n">metadata1</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getImage</span><span class="p">(</span><span class="s2">&quot;googlemaps&quot;</span><span class="p">,</span> <span class="n">point</span><span class="o">=</span><span class="s2">&quot;40.714728,-73.9986729&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;1000,1000&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;jpg&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">metadata1</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+
+        <span class="c1">#Debería devolver el mensaje de error y null porque el formato de &quot;size&quot; es &quot;altura,anchura&quot; no &quot;alturaxanchura&quot;</span>
+        <span class="n">img1</span><span class="p">,</span> <span class="n">metadata1</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getImage</span><span class="p">(</span><span class="s2">&quot;googlemaps&quot;</span><span class="p">,</span> <span class="n">point</span><span class="o">=</span><span class="s2">&quot;40.714728,-73.9986729&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;1000x1000&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsNone</span><span class="p">(</span><span class="n">metadata1</span><span class="p">)</span>
+
+        <span class="c1">#Debería devolver el mensaje de error y null</span>
+        <span class="n">img1</span><span class="p">,</span> <span class="n">metadata1</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getImage</span><span class="p">(</span><span class="s2">&quot;googlemaps&quot;</span><span class="p">,</span> <span class="n">point</span><span class="o">=</span><span class="s2">&quot;40.aaaaa,-73.9986729,-2.304528141507549&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsNone</span><span class="p">(</span><span class="n">metadata1</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TestApiRest.test_getImage_bingmaps"><a class="viewcode-back" href="../../Tests.html#Tests.Tests.TestApiRest.test_getImage_bingmaps">[docs]</a>    <span class="k">def</span> <span class="nf">test_getImage_bingmaps</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test para la función getImage con el servicio Bing Maps</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Debería devolver la imagen</span>
+        <span class="n">img1</span><span class="p">,</span> <span class="n">metadata1</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getImage</span><span class="p">(</span><span class="s2">&quot;bingmaps&quot;</span><span class="p">,</span> <span class="n">point</span><span class="o">=</span><span class="s2">&quot;40.714728,-73.9986729&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">metadata1</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+
+        <span class="c1">#Debería devolver el mensaje de error y null porque falta el parámetro &quot;point&quot;</span>
+        <span class="n">img1</span><span class="p">,</span> <span class="n">metadata1</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getImage</span><span class="p">(</span><span class="s2">&quot;bingmaps&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsNone</span><span class="p">(</span><span class="n">metadata1</span><span class="p">)</span>
+
+        <span class="c1">#Debería devolver la imagen</span>
+        <span class="n">img1</span><span class="p">,</span> <span class="n">metadata1</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getImage</span><span class="p">(</span><span class="s2">&quot;bingmaps&quot;</span><span class="p">,</span> <span class="n">point</span><span class="o">=</span><span class="s2">&quot;40.714728,-73.9986729&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;1000,1000&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;jpg&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">metadata1</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+
+        <span class="c1">#Debería devolver el mensaje de error y null porque el formato de &quot;size&quot; es &quot;altura,anchura&quot; no &quot;alturaxanchura&quot;</span>
+        <span class="n">img1</span><span class="p">,</span> <span class="n">metadata1</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getImage</span><span class="p">(</span><span class="s2">&quot;bingmaps&quot;</span><span class="p">,</span> <span class="n">point</span><span class="o">=</span><span class="s2">&quot;40.714728,-73.9986729&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;1000x1000&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsNone</span><span class="p">(</span><span class="n">metadata1</span><span class="p">)</span>
+
+        <span class="c1">#Debería devolver el mensaje de error y null</span>
+        <span class="n">img1</span><span class="p">,</span> <span class="n">metadata1</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getImage</span><span class="p">(</span><span class="s2">&quot;bingmaps&quot;</span><span class="p">,</span> <span class="n">point</span><span class="o">=</span><span class="s2">&quot;40.aaaaa,-73.9986729,-2.304528141507549&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsNone</span><span class="p">(</span><span class="n">metadata1</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TestApiRest.test_getImage"><a class="viewcode-back" href="../../Tests.html#Tests.Tests.TestApiRest.test_getImage">[docs]</a>    <span class="k">def</span> <span class="nf">test_getImage</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test para la función getImage con peticiones genéricas</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1">#Debería devolver el mensaje de error y null</span>
+        <span class="n">img1</span><span class="p">,</span> <span class="n">metadata1</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getImage</span><span class="p">(</span><span class="s2">&quot;servicio inventado&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsNone</span><span class="p">(</span><span class="n">metadata1</span><span class="p">)</span>
+
+        <span class="c1">#Debería devolver el mensaje de error y null porque solo se puede pedir imagen de un servidio</span>
+        <span class="n">img1</span><span class="p">,</span> <span class="n">metadata1</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getImage</span><span class="p">(</span><span class="s2">&quot;bingmaps,googlemaps&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsNone</span><span class="p">(</span><span class="n">metadata1</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TestApiRest.test_getMetadata"><a class="viewcode-back" href="../../Tests.html#Tests.Tests.TestApiRest.test_getMetadata">[docs]</a>    <span class="k">def</span> <span class="nf">test_getMetadata</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test para la función getMetadata</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Debería devolver el mensaje de error</span>
+        <span class="n">metadata</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getMetadata</span><span class="p">(</span><span class="s2">&quot;40.714728,-73.9986729&quot;</span><span class="p">,</span> <span class="n">servicio</span><span class="o">=</span><span class="s2">&quot;bingmaps,servicioinventado&quot;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">decoder</span><span class="o">.</span><span class="n">JSONDecodeError</span><span class="p">):</span>
+            <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span>
+
+        <span class="c1"># Debería devover los metadatos</span>
+        <span class="n">metadata</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getMetadata</span><span class="p">(</span><span class="s2">&quot;40.714728,-73.9986729&quot;</span><span class="p">,</span> <span class="n">servicio</span><span class="o">=</span><span class="s2">&quot;bingmaps,googlemaps,planetlabs&quot;</span><span class="p">)</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span>
+
+        <span class="c1">#Debería devolver el mensaje de error porque falta el parámetro &quot;point&quot;</span>
+        <span class="n">metadata</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getMetadata</span><span class="p">(</span><span class="s2">&quot;bingmaps,googlemaps,planetlabs&quot;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">decoder</span><span class="o">.</span><span class="n">JSONDecodeError</span><span class="p">):</span>
+            <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span>
+
+        <span class="c1"># Debería devover los metadatos</span>
+        <span class="n">metadata</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getMetadata</span><span class="p">(</span><span class="s2">&quot;40.714728,-73.9986729&quot;</span><span class="p">,</span> <span class="n">servicio</span><span class="o">=</span><span class="s2">&quot;bingmaps,googlemaps,planetlabs&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;1000,1000&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;jpg&#39;</span><span class="p">)</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span>
+
+        <span class="c1">#Debería devolver el mensaje de error y null porque el formato de &quot;size&quot; es &quot;altura,anchura&quot; no &quot;alturaxanchura&quot;</span>
+        <span class="n">metadata</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getMetadata</span><span class="p">(</span><span class="s2">&quot;40.714728,-73.9986729&quot;</span><span class="p">,</span> <span class="n">servicio</span><span class="o">=</span><span class="s2">&quot;bingmaps,googlemaps,planetlabs&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;1000x1000&quot;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">decoder</span><span class="o">.</span><span class="n">JSONDecodeError</span><span class="p">):</span>
+            <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span>
+
+        <span class="c1">#Debería devolver el mensaje de error y null</span>
+        <span class="n">metadata</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getMetadata</span><span class="p">(</span><span class="s2">&quot;-73.9aaaaa986729,-2.304528141507549&quot;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">decoder</span><span class="o">.</span><span class="n">JSONDecodeError</span><span class="p">):</span>
+            <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="TestApiRest.test_getPreview"><a class="viewcode-back" href="../../Tests.html#Tests.Tests.TestApiRest.test_getPreview">[docs]</a>    <span class="k">def</span> <span class="nf">test_getPreview</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Test para la función getPreview</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1">#Debería devolver la imagen</span>
+        <span class="n">img1</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getPreview</span><span class="p">(</span><span class="s2">&quot;planetlabs&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;S2A_MSIL1C_20200318T071621_N0209_R006_T37MHT_20200318T093056&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">)</span>
+
+        <span class="c1">#Debería devolver la imagen</span>
+        <span class="n">img1</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getPreview</span><span class="p">(</span><span class="s2">&quot;planetlabs&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;S2A_MSIL1C_20200318T071621_N0209_R006_T37MHT_20200318T093056&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;1500,1500&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">)</span>
+
+        <span class="c1">#Debería devolver la imagen</span>
+        <span class="n">img1</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getPreview</span><span class="p">(</span><span class="s2">&quot;planetlabs&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;S2A_MSIL1C_20200318T071621_N0209_R006_T37MHT_20200318T093056&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;1500&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">)</span>
+
+        <span class="c1">#Debería devolver el mensaje de error (el máximo width es 2048)</span>
+        <span class="n">img1</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getPreview</span><span class="p">(</span><span class="s2">&quot;planetlabs&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;S2A_MSIL1C_20200318T071621_N0209_R006_T37MHT_20200318T093056&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;3000,3000&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+
+        <span class="c1">#Debería devolver el mensaje de error</span>
+        <span class="n">img1</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getPreview</span><span class="p">(</span><span class="s2">&quot;planetlabs&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;id inventado&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+
+        <span class="c1">#Debería devolver el mensaje de error</span>
+        <span class="n">img1</span> <span class="o">=</span> <span class="n">Proxy</span><span class="o">.</span><span class="n">getPreview</span><span class="p">(</span><span class="s2">&quot;bingmaps&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;id inventado&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Alejandro de la Cruz López
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

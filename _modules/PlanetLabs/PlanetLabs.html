@@ -1,0 +1,643 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>PlanetLabs.PlanetLabs &mdash; Satellite Images Api Rest  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Satellite Images Api Rest
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../UserGuide.html">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../UserGuide.html#precondiciones">Precondiciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../UserGuide.html#inicializacion">Inicialización</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../UserGuide.html#funciones-del-sistema">Funciones del Sistema</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../UserGuide.html#getservices">getServices()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../UserGuide.html#def-getimage-provider-kwargs">def getImage(provider, **kwargs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../UserGuide.html#getmetadata-point-kwargs">getMetadata(point, **kwargs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../UserGuide.html#def-getpreview-provider-id-kwargs">def getPreview(provider, id, **kwargs)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../UserGuide.html#parametros-por-servicio">Parámetros por Servicio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../UserGuide.html#funciones-para-bing-maps">Funciones para Bing Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../UserGuide.html#funciones-para-google-maps">Funciones para Google Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../UserGuide.html#funciones-para-planet-labs">Funciones para Planet Labs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Dependencies.html">Dependencies of the project</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Dependencies.html#system-packages">System packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Dependencies.html#external-packages">External packages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../ModuleAdditionGuide.html">Module Addition Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../ModuleAdditionGuide.html#creacion-del-modulo">Creación del módulo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ModuleAdditionGuide.html#implementacion-del-modulo">Implementación del módulo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ModuleAdditionGuide.html#fichero-de-configuracion">Fichero de configuración</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ModuleAdditionGuide.html#documentacion">Documentación</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Python Code Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Proxy.html">Proxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ApiRest.html">ApiRest</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../BingMaps.html">Bing Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../GoogleMaps.html">Google Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../PlanetLabs.html">Planet Labs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Utils</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../Utils.html">Utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ApiExceptions.html">ApiExceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tests.html">Tests</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Satellite Images Api Rest</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>PlanetLabs.PlanetLabs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for PlanetLabs.PlanetLabs</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Módulo PlanetLabs.</span>
+
+<span class="sd">Este módulo tiene funciones específicas para obtener imágenes</span>
+<span class="sd">del servicio Map Static API que ofrece Bing Maps.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">date</span>
+<span class="kn">from</span> <span class="nn">planet</span> <span class="kn">import</span> <span class="n">api</span>
+<span class="kn">import</span> <span class="nn">geojson</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">arrow</span>
+<span class="kn">from</span> <span class="nn">requests.auth</span> <span class="kn">import</span> <span class="n">HTTPBasicAuth</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">ApiExceptions</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<div class="viewcode-block" id="PlanetLabs"><a class="viewcode-back" href="../../PlanetLabs.html#PlanetLabs.PlanetLabs.PlanetLabs">[docs]</a><span class="k">class</span> <span class="nc">PlanetLabs</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Clase para acceder a imágenes del servicio PlanetLabs</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        all_item_types (list[str]): Todos los tipos de satélite de Planet Labs.</span>
+<span class="sd">            Parámetro necesario para hacer consultas</span>
+<span class="sd">        key (str): Clave para acceder a la Api de Planet Labs</span>
+<span class="sd">        client (ClientV1): Cliente inicializado para acceder al servicio de Planet Labs</span>
+<span class="sd">        required_params (list[str]): Parámetros obligatorios para hacer consultas a Planet Labs</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">all_item_types</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;PSScene3Band&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;PSScene4Band&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;PSOrthoTile&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;REOrthoTile&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;REScene&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;SkySatScene&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;SkySatCollect&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;SkySatVideo&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;Landsat8L1G&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;Sentinel2L1C&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">all_item_types</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Sentinel2L1C&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">required_params</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;point&quot;</span><span class="p">,</span> <span class="s2">&quot;resolution&quot;</span><span class="p">,</span> <span class="s2">&quot;beforeDate&quot;</span><span class="p">,</span> <span class="s2">&quot;afterDate&quot;</span><span class="p">,</span> <span class="s2">&quot;maxResults&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">key</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">ClientV1</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">)</span>
+
+<div class="viewcode-block" id="PlanetLabs.dataRequest"><a class="viewcode-back" href="../../PlanetLabs.html#PlanetLabs.PlanetLabs.PlanetLabs.dataRequest">[docs]</a>    <span class="k">def</span> <span class="nf">dataRequest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Función para obtener los metadatos de las imágenes coincidentes con los parámetros de entrada.</span>
+
+<span class="sd">        Dados unos parámetros de entrada devuelve los metadatos que</span>
+<span class="sd">        Planet Labs ofrece de las imágenes que coincidan con estos.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            user_params (dict[str-&gt;str]):</span>
+<span class="sd">                Diccionario con los valores de entrada del usuario.</span>
+
+<span class="sd">                - point</span>
+<span class="sd">                    - Descripción: Punto perteneciente a la imagen en latitud y longitud.</span>
+<span class="sd">                    - Formato: &quot;latitud,longitud&quot;</span>
+<span class="sd">                    - Ejemplo: &quot;41.800507792693544,-2.304528141507549&quot;</span>
+<span class="sd">                - resolution</span>
+<span class="sd">                    - Descripción: Resolución máxima en metros/pixel de la imagen que queremos obtener.</span>
+<span class="sd">                    - Ejemplo: &quot;3.5&quot;</span>
+<span class="sd">                - beforeDate</span>
+<span class="sd">                    - Descripción: Obtener únicamente imágenes anteriores a la fecha dada.</span>
+<span class="sd">                    - Formato: &quot;dd-mm-aaaa&quot;</span>
+<span class="sd">                    - Ejemplo: &quot;12-09-2005&quot;</span>
+<span class="sd">                - afterDate</span>
+<span class="sd">                    - Descripción: Obtener únicamente imágenes posteriores a la fecha dada.</span>
+<span class="sd">                    - Formato: &quot;dd-mm-aaaa&quot;</span>
+<span class="sd">                    - Ejemplo: &quot;12-09-2005&quot;</span>
+<span class="sd">                - maxResults</span>
+<span class="sd">                    - Descripción: Número máximo de resultados que queremos obtener por servicio</span>
+<span class="sd">                    - Ejemplo: &quot;5&quot;</span>
+<span class="sd">                - itemTypes</span>
+<span class="sd">                    - Descripción: Tipos de imágenes que se quiere que se devuelvan</span>
+<span class="sd">                    - Ejemplo: &quot;PSScene4Band,PSOrthoTile&quot;</span>
+
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict[str-&gt;any]: Diccionario con los metadatos de las imágenes devueltas</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ParametersException: Si se han introducido erróneamente valores de entrada.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1">#Comprobamos que no falte ningún parámetro obligatorio</span>
+        <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">required_params</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">user_params</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ParametersException</span><span class="p">(</span><span class="s2">&quot;Se debe introducir el parámetro &#39;</span><span class="si">{}</span><span class="s2">&#39; en la consulta o establecer&quot;</span>
+                                <span class="s2">&quot;un valor predeterminado en el fichero de configuración.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">param</span><span class="p">))</span>
+
+        <span class="c1">#Creamos el filtro para hacer la búsqueda</span>
+        <span class="nb">filter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_filter</span><span class="p">(</span><span class="n">user_params</span><span class="p">)</span>
+
+        <span class="c1">#Si no se han especificado tipos, se buscarán todos</span>
+        <span class="k">if</span> <span class="s1">&#39;item_types&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">user_params</span><span class="p">:</span>
+            <span class="n">user_params</span><span class="p">[</span><span class="s1">&#39;item_types&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_item_types</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">user_params</span><span class="p">[</span><span class="s1">&#39;item_types&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">user_params</span><span class="p">[</span><span class="s1">&#39;item_types&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+
+        <span class="n">request</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">build_search_request</span><span class="p">(</span><span class="nb">filter</span><span class="p">,</span> <span class="n">user_params</span><span class="p">[</span><span class="s1">&#39;item_types&#39;</span><span class="p">])</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">quick_search</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">results</span><span class="o">.</span><span class="n">_json_stream</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">user_params</span><span class="p">[</span><span class="s1">&#39;maxResults&#39;</span><span class="p">]))</span></div>
+
+<div class="viewcode-block" id="PlanetLabs.create_filter"><a class="viewcode-back" href="../../PlanetLabs.html#PlanetLabs.PlanetLabs.PlanetLabs.create_filter">[docs]</a>    <span class="k">def</span> <span class="nf">create_filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Función para crear el filtro de Planet Labs</span>
+
+<span class="sd">        Dados unos parámetros de entrada, devuelve los filtros</span>
+<span class="sd">        utilizados por Planet Labs para poder hacer peticiones</span>
+<span class="sd">        a su servicio REST.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            user_params (dict[str-&gt;any]): Diccionario con los valores de entrada</span>
+<span class="sd">                del usuario. Mismos parámetros que la función :py:meth:`PlanetLabs.PlanetLabs.dataRequest`</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list(filter): Lista de filtros</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">filters</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1">#Filtro para que la imagen tenga permisos de descarga</span>
+        <span class="n">filters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">permission_filter</span><span class="p">(</span><span class="s1">&#39;assets.visual:download&#39;</span><span class="p">))</span>
+
+        <span class="c1">#Filtro para que las fechas estén dentro del rango solicitado</span>
+        <span class="k">if</span> <span class="s1">&#39;beforeDate&#39;</span> <span class="ow">in</span> <span class="n">user_params</span><span class="p">:</span>
+            <span class="n">date_list</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">user_params</span><span class="p">[</span><span class="s1">&#39;beforeDate&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)]</span>
+            <span class="n">asked_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="n">date_list</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">date_list</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">date_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">filters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s2">&quot;acquired&quot;</span><span class="p">,</span> <span class="n">lte</span><span class="o">=</span> <span class="n">asked_date</span><span class="p">))</span>
+        <span class="k">if</span> <span class="s1">&#39;afterDate&#39;</span> <span class="ow">in</span> <span class="n">user_params</span><span class="p">:</span>
+            <span class="n">date_list</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">user_params</span><span class="p">[</span><span class="s1">&#39;afterDate&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)]</span>
+            <span class="n">asked_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="n">date_list</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">date_list</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">date_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">filters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s2">&quot;acquired&quot;</span><span class="p">,</span> <span class="n">gte</span><span class="o">=</span><span class="n">asked_date</span><span class="p">))</span>
+
+        <span class="c1">#Filtro para que el punto esté pertenezca a las imágenes</span>
+        <span class="k">if</span> <span class="s1">&#39;point&#39;</span> <span class="ow">in</span> <span class="n">user_params</span><span class="p">:</span>
+            <span class="n">point</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">user_params</span><span class="p">[</span><span class="s1">&#39;point&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)]</span>
+            <span class="n">geoJson</span> <span class="o">=</span> <span class="n">geojson</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>
+            <span class="n">filters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">geom_filter</span><span class="p">(</span><span class="n">geoJson</span><span class="p">))</span>
+
+        <span class="c1">#Filtro para que la resolución sea menor que un valor dado</span>
+        <span class="k">if</span> <span class="s1">&#39;resolution&#39;</span> <span class="ow">in</span> <span class="n">user_params</span><span class="p">:</span>
+            <span class="n">filters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">range_filter</span><span class="p">(</span><span class="s2">&quot;gsd&quot;</span><span class="p">,</span> <span class="n">lte</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="n">user_params</span><span class="p">[</span><span class="s1">&#39;resolution&#39;</span><span class="p">])))</span>
+
+        <span class="n">final_filter</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">and_filter</span><span class="p">(</span><span class="o">*</span><span class="n">filters</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">final_filter</span></div>
+
+<div class="viewcode-block" id="PlanetLabs.get_asset"><a class="viewcode-back" href="../../PlanetLabs.html#PlanetLabs.PlanetLabs.PlanetLabs.get_asset">[docs]</a>    <span class="k">def</span> <span class="nf">get_asset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Función para obtener los assets de una imagen dada por su id.</span>
+
+<span class="sd">        Dado un id, devuelve los links y metadatos de la imagen</span>
+<span class="sd">        que corresponda a ese mismo id.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            id (str): Id de la imagen</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict(any-&gt;any): Assets de la imagen</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="nb">filter</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">string_filter</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">)</span>
+
+        <span class="n">request</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">build_search_request</span><span class="p">(</span><span class="nb">filter</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_item_types</span><span class="p">)</span>
+
+        <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">quick_search</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+        <span class="c1">#Si no se ha devuelto nada de la petición es porque el id es incorrecto</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">items_iter</span><span class="p">(</span><span class="mi">1</span><span class="p">)))</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ApiException</span><span class="p">(</span><span class="s2">&quot;El id insertado es incorrecto.&quot;</span><span class="p">)</span>
+
+        <span class="n">asset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get_assets</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">items_iter</span><span class="p">(</span><span class="mi">1</span><span class="p">)))</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">asset</span></div>
+
+<div class="viewcode-block" id="PlanetLabs.activate"><a class="viewcode-back" href="../../PlanetLabs.html#PlanetLabs.PlanetLabs.PlanetLabs.activate">[docs]</a>    <span class="k">def</span> <span class="nf">activate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Función para activar una imagen dado su id</span>
+
+<span class="sd">        Dado un id, se activa la imagen para que el servicio</span>
+<span class="sd">        valide y permita la descarga de la misma</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            id (str): Id de la imagen</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict(any-&gt;any): Assets de la imagen</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">asset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_asset</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="n">asset</span><span class="p">[</span><span class="s1">&#39;visual&#39;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">asset</span></div>
+
+<div class="viewcode-block" id="PlanetLabs.getDownloadLink"><a class="viewcode-back" href="../../PlanetLabs.html#PlanetLabs.PlanetLabs.PlanetLabs.getDownloadLink">[docs]</a>    <span class="k">def</span> <span class="nf">getDownloadLink</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Función que devuelve el link de descarga de una imagen</span>
+
+<span class="sd">        Dado un id, devuelve el link de descarga de esa imagen. Es</span>
+<span class="sd">        necesario que previamente se active la misma para poder acceder</span>
+<span class="sd">        a la descarga.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            id (str): Id de la imagen</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: Link de descarga de la imagen o un mensaje con el estado</span>
+<span class="sd">            de la imagen si no estuviera activada.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            NotActiveException: Si el recurso se está activando o no está activo</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">asset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_asset</span><span class="p">(</span><span class="nb">id</span><span class="p">)[</span><span class="s1">&#39;visual&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="s1">&#39;location&#39;</span> <span class="ow">in</span> <span class="n">asset</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">asset</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;activating&#39;</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotActiveException</span><span class="p">(</span><span class="s2">&quot;Activating&quot;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">asset</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;inactive&#39;</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">NotActiveException</span><span class="p">(</span><span class="s2">&quot;Inactive&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">asset</span><span class="p">[</span><span class="s1">&#39;location&#39;</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="PlanetLabs.getMetadata"><a class="viewcode-back" href="../../PlanetLabs.html#PlanetLabs.PlanetLabs.PlanetLabs.getMetadata">[docs]</a>    <span class="k">def</span> <span class="nf">getMetadata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Función para obtener los metadatos de ciertas imágenes</span>
+
+<span class="sd">        Dados unos parámetros de entrada devuelve los metadatos</span>
+<span class="sd">        de las imagenes en formato GeoJSON. La diferencia con los</span>
+<span class="sd">        metadatos que ofrece Planet Labs es que estos están</span>
+<span class="sd">        seleccionados para una mejor visualización.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            user_params (dict[str-&gt;any]): Diccionario con los valores de entrada</span>
+<span class="sd">                del usuario. Mismos parámetros que la función :py:meth:`PlanetLabs.PlanetLabs.dataRequest`</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list(dict[str-&gt;any]): Lista de metadatos formato GeoJSON</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ApiException: Si se produce un error en la API de Planet Labs</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataRequest</span><span class="p">(</span><span class="n">user_params</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">api</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">APIException</span> <span class="k">as</span> <span class="n">ae</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ApiException</span><span class="p">(</span><span class="s2">&quot;Error en Planet Labs: &quot;</span> <span class="o">+</span> <span class="n">ae</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+
+        <span class="n">feature_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;features&#39;</span><span class="p">]:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;geometry&quot;</span><span class="p">:</span> <span class="n">image</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">],</span>
+                <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;Planet Labs&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">image</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+                    <span class="s2">&quot;punto_central&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+                    <span class="s2">&quot;acquired_date&quot;</span><span class="p">:</span> <span class="n">arrow</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;acquired&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">-%m-</span><span class="si">%G</span><span class="s2">&quot;</span><span class="p">),</span>
+                    <span class="s2">&quot;download_date&quot;</span><span class="p">:</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">-%m-</span><span class="si">%G</span><span class="s2">&quot;</span><span class="p">),</span>
+                    <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">,</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;rows&#39;</span><span class="p">],</span><span class="n">image</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;columns&#39;</span><span class="p">]),</span>
+                    <span class="s2">&quot;resolution&quot;</span><span class="p">:</span> <span class="n">image</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;gsd&#39;</span><span class="p">]</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="n">feature_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+
+        <span class="k">return</span> <span class="n">feature_list</span></div>
+
+<div class="viewcode-block" id="PlanetLabs.getMetadataById"><a class="viewcode-back" href="../../PlanetLabs.html#PlanetLabs.PlanetLabs.PlanetLabs.getMetadataById">[docs]</a>    <span class="k">def</span> <span class="nf">getMetadataById</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Función para obtener los metadatos de ciertas imágenes</span>
+
+<span class="sd">        Dados un id de una imagen, devuelve los metadatos</span>
+<span class="sd">        de esta misma en formato GeoJSON.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            id (str): Id de la imagen</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict[str-&gt;any]: Lista de metadatos formato GeoJSON</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: Mensaje de error si se produce una excepción</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ApiException: Si se produce un error en la API</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">id_filter</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">string_filter</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">)</span>
+            <span class="n">request</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">build_search_request</span><span class="p">(</span><span class="n">id_filter</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_item_types</span><span class="p">)</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">quick_search</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+            <span class="n">metadata</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">_json_stream</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">api</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">APIException</span> <span class="k">as</span> <span class="n">ae</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ApiException</span><span class="p">(</span><span class="s2">&quot;Error en Planet Labs: &quot;</span> <span class="o">+</span> <span class="n">ae</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="k">for</span> <span class="n">image</span> <span class="ow">in</span> <span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;features&#39;</span><span class="p">]:</span>
+            <span class="n">final_metadata</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Feature&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;geometry&quot;</span><span class="p">:</span> <span class="n">image</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">],</span>
+                <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;service&quot;</span><span class="p">:</span> <span class="s2">&quot;Planet Labs&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="n">image</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+                    <span class="s2">&quot;punto_central&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+                    <span class="s2">&quot;acquired_date&quot;</span><span class="p">:</span> <span class="n">arrow</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;acquired&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">-%m-</span><span class="si">%G</span><span class="s2">&quot;</span><span class="p">),</span>
+                    <span class="s2">&quot;download_date&quot;</span><span class="p">:</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2">-%m-</span><span class="si">%G</span><span class="s2">&quot;</span><span class="p">),</span>
+                    <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">,</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">image</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;rows&#39;</span><span class="p">],</span><span class="n">image</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;columns&#39;</span><span class="p">]),</span>
+                    <span class="s2">&quot;resolution&quot;</span><span class="p">:</span> <span class="n">image</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;gsd&#39;</span><span class="p">]</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">final_metadata</span></div>
+
+<div class="viewcode-block" id="PlanetLabs.getImage"><a class="viewcode-back" href="../../PlanetLabs.html#PlanetLabs.PlanetLabs.PlanetLabs.getImage">[docs]</a>    <span class="k">def</span> <span class="nf">getImage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Función para obtener una imagen y sus metadatos</span>
+
+<span class="sd">        Dado un diccionario con el parámetro id correspondiente</span>
+<span class="sd">        al id de la imagen, devuelve la imagenen bytes y sus</span>
+<span class="sd">        metadatos en formato GeoJson.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            user_params (dict[str-&gt;any]): Diccionario con el</span>
+<span class="sd">                parámetro id.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Tuple(bytes, Dict[str-&gt;any]): Tupla con la imagen en bytes y sus metadatos formato GeoJSON</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ApiException: Si se produce un error en la API</span>
+<span class="sd">            ActivatingException: Si el recurso no está aun activo</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">img_link</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getDownloadLink</span><span class="p">(</span><span class="n">user_params</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">])</span>
+        <span class="k">except</span> <span class="n">NotActiveException</span> <span class="k">as</span> <span class="n">ae</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">ae</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Inactive&#39;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">activate</span><span class="p">(</span><span class="n">user_params</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">])</span>
+                <span class="k">raise</span> <span class="n">ActivatingException</span><span class="p">(</span><span class="s2">&quot;Se ha mandado la peticion de activar el recurso. Pruebe en unos momentos.&quot;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">ae</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Activating&#39;</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ActivatingException</span><span class="p">(</span><span class="s2">&quot;El recurso se está activando. Pruebe en unos momentos.&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">api</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">APIException</span> <span class="k">as</span> <span class="n">ae</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ApiException</span><span class="p">(</span><span class="n">ae</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ApiException</span><span class="p">(</span><span class="s2">&quot;Se debe introducir el id de la imagen.&quot;</span><span class="p">)</span>
+
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">img_link</span><span class="p">)</span>
+            <span class="n">metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getMetadataById</span><span class="p">(</span><span class="n">user_params</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">])</span>
+        <span class="k">except</span> <span class="n">api</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">APIException</span> <span class="k">as</span> <span class="n">ae</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ApiException</span><span class="p">(</span><span class="n">ae</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="n">resp</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="n">metadata</span></div>
+
+<div class="viewcode-block" id="PlanetLabs.getPreview"><a class="viewcode-back" href="../../PlanetLabs.html#PlanetLabs.PlanetLabs.PlanetLabs.getPreview">[docs]</a>    <span class="k">def</span> <span class="nf">getPreview</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_params</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Función para obtener la miniatura de una imagen</span>
+
+<span class="sd">        Dado el id de la imagen y una anchura se devuelve</span>
+<span class="sd">        la imagen en formato png.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            user_params (dict[str-&gt;str])</span>
+<span class="sd">                Diccionario con los parámetros:</span>
+<span class="sd">                    - Obligatorio:</span>
+<span class="sd">                        - id</span>
+<span class="sd">                            - Descripción: Id de la imagen</span>
+<span class="sd">                    - Opcional</span>
+<span class="sd">                        - size</span>
+<span class="sd">                            - Descripción: Tamaño de la imagen</span>
+<span class="sd">                            - Ejemplo: &quot;2048,2048&quot;</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Bytes: Imagen en bytes</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ApiException: Si se produce un error en la API</span>
+<span class="sd">            ParametersException: Si la anchura no entra dentro del rango posible.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">filter</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">string_filter</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="n">user_params</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">])</span>
+            <span class="n">request</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">build_search_request</span><span class="p">(</span><span class="nb">filter</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">all_item_types</span><span class="p">)</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">quick_search</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+            <span class="c1">#Si no se ha devuelto nada de la petición es porque el id es incorrecto</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">items_iter</span><span class="p">(</span><span class="mi">1</span><span class="p">)))</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ApiException</span><span class="p">(</span><span class="s2">&quot;El id insertado es incorrecto.&quot;</span><span class="p">)</span>
+            <span class="n">thumb_link</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">results</span><span class="o">.</span><span class="n">items_iter</span><span class="p">(</span><span class="mi">1</span><span class="p">))[</span><span class="s1">&#39;_links&#39;</span><span class="p">][</span><span class="s1">&#39;thumbnail&#39;</span><span class="p">]</span>
+        <span class="k">except</span> <span class="n">api</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">APIException</span> <span class="k">as</span> <span class="n">ae</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ApiException</span><span class="p">(</span><span class="n">ae</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="n">width</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">user_params</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">query_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;width&#39;</span><span class="p">:</span> <span class="n">width</span><span class="p">}</span>
+        <span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                <span class="n">thumb_link</span><span class="p">,</span> <span class="n">query_dict</span><span class="p">,</span>
+                <span class="n">auth</span><span class="o">=</span><span class="n">HTTPBasicAuth</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">key</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">resp</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">ParametersException</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">resp</span><span class="o">.</span><span class="n">content</span></div></div>
+
+
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Alejandro de la Cruz López
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

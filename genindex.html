@@ -1,0 +1,539 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Index &mdash; Satellite Images Api Rest  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Satellite Images Api Rest
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="UserGuide.html">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="UserGuide.html#precondiciones">Precondiciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UserGuide.html#inicializacion">Inicialización</a></li>
+<li class="toctree-l2"><a class="reference internal" href="UserGuide.html#funciones-del-sistema">Funciones del Sistema</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#getservices">getServices()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#def-getimage-provider-kwargs">def getImage(provider, **kwargs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#getmetadata-point-kwargs">getMetadata(point, **kwargs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#def-getpreview-provider-id-kwargs">def getPreview(provider, id, **kwargs)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="UserGuide.html#parametros-por-servicio">Parámetros por Servicio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#funciones-para-bing-maps">Funciones para Bing Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#funciones-para-google-maps">Funciones para Google Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="UserGuide.html#funciones-para-planet-labs">Funciones para Planet Labs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Dependencies.html">Dependencies of the project</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Dependencies.html#system-packages">System packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Dependencies.html#external-packages">External packages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ModuleAdditionGuide.html">Module Addition Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ModuleAdditionGuide.html#creacion-del-modulo">Creación del módulo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModuleAdditionGuide.html#implementacion-del-modulo">Implementación del módulo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModuleAdditionGuide.html#fichero-de-configuracion">Fichero de configuración</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModuleAdditionGuide.html#documentacion">Documentación</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Python Code Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Proxy.html">Proxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApiRest.html">ApiRest</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="BingMaps.html">Bing Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GoogleMaps.html">Google Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PlanetLabs.html">Planet Labs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Utils</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Utils.html">Utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApiExceptions.html">ApiExceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tests.html">Tests</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Satellite Images Api Rest</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Index</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#K"><strong>K</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#Z"><strong>Z</strong></a>
+ 
+</div>
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="PlanetLabs.html#PlanetLabs.PlanetLabs.PlanetLabs.activate">activate() (PlanetLabs.PlanetLabs.PlanetLabs method)</a>
+</li>
+      <li><a href="ApiExceptions.html#ApiExceptions.ActivatingException">ActivatingException</a>
+</li>
+      <li><a href="PlanetLabs.html#PlanetLabs.PlanetLabs.PlanetLabs.all_item_types">all_item_types (PlanetLabs.PlanetLabs.PlanetLabs attribute)</a>
+</li>
+      <li><a href="ApiRest.html#ApiRest.api">api (in module ApiRest)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="ApiExceptions.html#ApiExceptions.ApiException">ApiException</a>
+</li>
+      <li><a href="ApiExceptions.html#module-ApiExceptions">ApiExceptions (module)</a>
+</li>
+      <li><a href="ApiRest.html#module-ApiRest">ApiRest (module)</a>
+</li>
+      <li><a href="ApiRest.html#ApiRest.app">app (in module ApiRest)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="BingMaps.html#BingMaps.BingMaps.BingMaps">BingMaps (class in BingMaps.BingMaps)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="BingMaps.html#module-BingMaps.BingMaps">BingMaps.BingMaps (module)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="ApiRest.html#ApiRest.callable_services">callable_services (in module ApiRest)</a>
+</li>
+      <li><a href="Utils.html#Utils.centerCoordsToGeojsonGeometry">centerCoordsToGeojsonGeometry() (in module Utils)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="PlanetLabs.html#PlanetLabs.PlanetLabs.PlanetLabs.client">client (PlanetLabs.PlanetLabs.PlanetLabs attribute)</a>
+</li>
+      <li><a href="PlanetLabs.html#PlanetLabs.PlanetLabs.PlanetLabs.create_filter">create_filter() (PlanetLabs.PlanetLabs.PlanetLabs method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="BingMaps.html#BingMaps.BingMaps.BingMaps.dataRequest">dataRequest() (BingMaps.BingMaps.BingMaps method)</a>
+
+      <ul>
+        <li><a href="GoogleMaps.html#GoogleMaps.GoogleMaps.GoogleMaps.dataRequest">(GoogleMaps.GoogleMaps.GoogleMaps method)</a>
+</li>
+        <li><a href="PlanetLabs.html#PlanetLabs.PlanetLabs.PlanetLabs.dataRequest">(PlanetLabs.PlanetLabs.PlanetLabs method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="ApiRest.html#ApiRest.Image.get">get() (ApiRest.Image method)</a>
+
+      <ul>
+        <li><a href="ApiRest.html#ApiRest.ImagePreview.get">(ApiRest.ImagePreview method)</a>
+</li>
+        <li><a href="ApiRest.html#ApiRest.Metadata.get">(ApiRest.Metadata method)</a>
+</li>
+        <li><a href="ApiRest.html#ApiRest.Servicios.get">(ApiRest.Servicios method)</a>
+</li>
+      </ul></li>
+      <li><a href="PlanetLabs.html#PlanetLabs.PlanetLabs.PlanetLabs.get_asset">get_asset() (PlanetLabs.PlanetLabs.PlanetLabs method)</a>
+</li>
+      <li><a href="PlanetLabs.html#PlanetLabs.PlanetLabs.PlanetLabs.getDownloadLink">getDownloadLink() (PlanetLabs.PlanetLabs.PlanetLabs method)</a>
+</li>
+      <li><a href="BingMaps.html#BingMaps.BingMaps.BingMaps.getImage">getImage() (BingMaps.BingMaps.BingMaps method)</a>
+
+      <ul>
+        <li><a href="GoogleMaps.html#GoogleMaps.GoogleMaps.GoogleMaps.getImage">(GoogleMaps.GoogleMaps.GoogleMaps method)</a>
+</li>
+        <li><a href="Proxy.html#Proxy.getImage">(in module Proxy)</a>
+</li>
+        <li><a href="PlanetLabs.html#PlanetLabs.PlanetLabs.PlanetLabs.getImage">(PlanetLabs.PlanetLabs.PlanetLabs method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="BingMaps.html#BingMaps.BingMaps.BingMaps.getMetadata">getMetadata() (BingMaps.BingMaps.BingMaps method)</a>
+
+      <ul>
+        <li><a href="GoogleMaps.html#GoogleMaps.GoogleMaps.GoogleMaps.getMetadata">(GoogleMaps.GoogleMaps.GoogleMaps method)</a>
+</li>
+        <li><a href="Proxy.html#Proxy.getMetadata">(in module Proxy)</a>
+</li>
+        <li><a href="PlanetLabs.html#PlanetLabs.PlanetLabs.PlanetLabs.getMetadata">(PlanetLabs.PlanetLabs.PlanetLabs method)</a>
+</li>
+      </ul></li>
+      <li><a href="PlanetLabs.html#PlanetLabs.PlanetLabs.PlanetLabs.getMetadataById">getMetadataById() (PlanetLabs.PlanetLabs.PlanetLabs method)</a>
+</li>
+      <li><a href="Proxy.html#Proxy.getPreview">getPreview() (in module Proxy)</a>
+
+      <ul>
+        <li><a href="PlanetLabs.html#PlanetLabs.PlanetLabs.PlanetLabs.getPreview">(PlanetLabs.PlanetLabs.PlanetLabs method)</a>
+</li>
+      </ul></li>
+      <li><a href="Proxy.html#Proxy.getServices">getServices() (in module Proxy)</a>
+</li>
+      <li><a href="GoogleMaps.html#GoogleMaps.GoogleMaps.GoogleMaps">GoogleMaps (class in GoogleMaps.GoogleMaps)</a>
+</li>
+      <li><a href="GoogleMaps.html#module-GoogleMaps.GoogleMaps">GoogleMaps.GoogleMaps (module)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="ApiRest.html#ApiRest.Image">Image (class in ApiRest)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="ApiRest.html#ApiRest.ImagePreview">ImagePreview (class in ApiRest)</a>
+</li>
+      <li><a href="ApiRest.html#ApiRest.initialize">initialize() (in module ApiRest)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="K">K</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="BingMaps.html#BingMaps.BingMaps.BingMaps.key">key (BingMaps.BingMaps.BingMaps attribute)</a>
+
+      <ul>
+        <li><a href="GoogleMaps.html#GoogleMaps.GoogleMaps.GoogleMaps.key">(GoogleMaps.GoogleMaps.GoogleMaps attribute)</a>
+</li>
+        <li><a href="PlanetLabs.html#PlanetLabs.PlanetLabs.PlanetLabs.key">(PlanetLabs.PlanetLabs.PlanetLabs attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="BingMaps.html#BingMaps.BingMaps.BingMaps.maxZoom">maxZoom (BingMaps.BingMaps.BingMaps attribute)</a>
+
+      <ul>
+        <li><a href="GoogleMaps.html#GoogleMaps.GoogleMaps.GoogleMaps.maxZoom">(GoogleMaps.GoogleMaps.GoogleMaps attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="ApiRest.html#ApiRest.Metadata">Metadata (class in ApiRest)</a>
+</li>
+      <li><a href="Utils.html#Utils.metersToLat">metersToLat() (in module Utils)</a>
+</li>
+      <li><a href="Utils.html#Utils.metersToLon">metersToLon() (in module Utils)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="ApiRest.html#ApiRest.Image.methods">methods (ApiRest.Image attribute)</a>
+
+      <ul>
+        <li><a href="ApiRest.html#ApiRest.ImagePreview.methods">(ApiRest.ImagePreview attribute)</a>
+</li>
+        <li><a href="ApiRest.html#ApiRest.Metadata.methods">(ApiRest.Metadata attribute)</a>
+</li>
+        <li><a href="ApiRest.html#ApiRest.Servicios.methods">(ApiRest.Servicios attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="ApiRest.html#ApiRest.modulos">modulos (in module ApiRest)</a>
+</li>
+      <li><a href="BingMaps.html#BingMaps.BingMaps.BingMaps.month_dict">month_dict (BingMaps.BingMaps.BingMaps attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="ApiExceptions.html#ApiExceptions.NotActiveException">NotActiveException</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="ApiExceptions.html#ApiExceptions.NotFoundImage">NotFoundImage</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="ApiExceptions.html#ApiExceptions.ParametersException">ParametersException</a>
+</li>
+      <li><a href="PlanetLabs.html#PlanetLabs.PlanetLabs.PlanetLabs">PlanetLabs (class in PlanetLabs.PlanetLabs)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="PlanetLabs.html#module-PlanetLabs.PlanetLabs">PlanetLabs.PlanetLabs (module)</a>
+</li>
+      <li><a href="Proxy.html#module-Proxy">Proxy (module)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="BingMaps.html#BingMaps.BingMaps.BingMaps.required_params">required_params (BingMaps.BingMaps.BingMaps attribute)</a>
+
+      <ul>
+        <li><a href="GoogleMaps.html#GoogleMaps.GoogleMaps.GoogleMaps.required_params">(GoogleMaps.GoogleMaps.GoogleMaps attribute)</a>
+</li>
+        <li><a href="PlanetLabs.html#PlanetLabs.PlanetLabs.PlanetLabs.required_params">(PlanetLabs.PlanetLabs.PlanetLabs attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="ApiRest.html#ApiRest.ruta_modulos">ruta_modulos (in module ApiRest)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="ApiRest.html#ApiRest.Servicios">Servicios (class in ApiRest)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="ApiRest.html#ApiRest.servicios">servicios (in module ApiRest)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Tests.html#Tests.Tests.TestApiRest.test_getImage">test_getImage() (Tests.Tests.TestApiRest method)</a>
+</li>
+      <li><a href="Tests.html#Tests.Tests.TestApiRest.test_getImage_bingmaps">test_getImage_bingmaps() (Tests.Tests.TestApiRest method)</a>
+</li>
+      <li><a href="Tests.html#Tests.Tests.TestApiRest.test_getImage_googlemaps">test_getImage_googlemaps() (Tests.Tests.TestApiRest method)</a>
+</li>
+      <li><a href="Tests.html#Tests.Tests.TestApiRest.test_getImage_planetlabs">test_getImage_planetlabs() (Tests.Tests.TestApiRest method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Tests.html#Tests.Tests.TestApiRest.test_getMetadata">test_getMetadata() (Tests.Tests.TestApiRest method)</a>
+</li>
+      <li><a href="Tests.html#Tests.Tests.TestApiRest.test_getPreview">test_getPreview() (Tests.Tests.TestApiRest method)</a>
+</li>
+      <li><a href="Tests.html#Tests.Tests.TestApiRest.test_getServices">test_getServices() (Tests.Tests.TestApiRest method)</a>
+</li>
+      <li><a href="Tests.html#Tests.Tests.TestApiRest">TestApiRest (class in Tests.Tests)</a>
+</li>
+      <li><a href="Tests.html#module-Tests.Tests">Tests.Tests (module)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="Utils.html#module-Utils">Utils (module)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="Z">Z</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="BingMaps.html#BingMaps.BingMaps.BingMaps.zoom_dict">zoom_dict (BingMaps.BingMaps.BingMaps attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Alejandro de la Cruz López
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+.. Api Rest documentation master file, created by
+   sphinx-quickstart on Mon Mar 23 08:55:30 2020.
+   
+*************************
+Satellite Images Api Rest
+*************************
+
+.. toctree::
+   :maxdepth: 2
+   :caption: User Manual
+
+   UserGuide
+   Dependencies
+   ModuleAdditionGuide
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Python Code Documentation
+
+
+   Proxy
+   ApiRest
+.. toctree::
+   :maxdepth: 2
+   :caption: Services
+   
+   BingMaps
+   GoogleMaps
+   PlanetLabs
+   
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Utils
+   
+   Utils
+   ApiExceptions
+   Tests
+   
+   

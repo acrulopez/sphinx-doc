@@ -1,0 +1,429 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>User Guide &mdash; Satellite Images Api Rest  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Dependencies of the project" href="Dependencies.html" />
+    <link rel="prev" title="Satellite Images Api Rest" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Satellite Images Api Rest
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#precondiciones">Precondiciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#inicializacion">Inicialización</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#funciones-del-sistema">Funciones del Sistema</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#getservices">getServices()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#def-getimage-provider-kwargs">def getImage(provider, **kwargs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getmetadata-point-kwargs">getMetadata(point, **kwargs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#def-getpreview-provider-id-kwargs">def getPreview(provider, id, **kwargs)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#parametros-por-servicio">Parámetros por Servicio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#funciones-para-bing-maps">Funciones para Bing Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#funciones-para-google-maps">Funciones para Google Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#funciones-para-planet-labs">Funciones para Planet Labs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Dependencies.html">Dependencies of the project</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Dependencies.html#system-packages">System packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Dependencies.html#external-packages">External packages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ModuleAdditionGuide.html">Module Addition Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ModuleAdditionGuide.html#creacion-del-modulo">Creación del módulo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModuleAdditionGuide.html#implementacion-del-modulo">Implementación del módulo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModuleAdditionGuide.html#fichero-de-configuracion">Fichero de configuración</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModuleAdditionGuide.html#documentacion">Documentación</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Python Code Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Proxy.html">Proxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApiRest.html">ApiRest</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="BingMaps.html">Bing Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GoogleMaps.html">Google Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PlanetLabs.html">Planet Labs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Utils</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Utils.html">Utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ApiExceptions.html">ApiExceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tests.html">Tests</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Satellite Images Api Rest</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>User Guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/UserGuide.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="user-guide">
+<h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="precondiciones">
+<h2>Precondiciones<a class="headerlink" href="#precondiciones" title="Permalink to this headline">¶</a></h2>
+<p>Para utilizar el sistema, debe existir un fichero de configuración <em>conf.json</em> en la carpeta raíz del proyecto. En este se especifica el servidor en el que se aloja la aplicación REST bajo la clave “server”, los servicios disponibles y la ruta de sus módulos bajo la clave “servicios”, las claves para acceder a estos servicios y los parámetros por defecto que utilizarán los servicios a los que se hagan llamadas en caso de no introducir dichos datos. Un ejemplo de este fichero sería:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span> {
+&quot;server&quot;: &quot;http://localhost:5000/&quot;,
+&quot;servicios&quot;:{
+      &quot;bingmaps&quot;:&quot;BingMaps/BingMaps&quot;,
+      &quot;googlemaps&quot;: &quot;GoogleMaps/GoogleMaps&quot;,
+      &quot;planetlabs&quot;: &quot;PlanetLabs/PlanetLabs&quot;
+},
+&quot;keys&quot;:{
+      &quot;bingmaps&quot;:&quot;XXXXXXXXXXXXXXXXXXXXXXXXXX&quot;,
+      &quot;googlemaps&quot;: &quot;XXXXXXXXXXXXXXXXXXXXXXXXXX&quot;,
+      &quot;planetlabs&quot;: &quot;XXXXXXXXXXXXXXXXXXXXXXXXXX&quot;
+},
+&quot;defaultParameters&quot;:{
+              &quot;size&quot;: &quot;640,640&quot;,
+              &quot;resolution&quot;: &quot;35&quot;,
+              &quot;maxResults&quot;: &quot;1&quot;,
+              &quot;format&quot;: &quot;png&quot;,
+              &quot;beforeDate&quot;: &quot;31-12-2040&quot;,
+              &quot;afterDate&quot;:&quot;01-01-1970&quot;
+              }
+ }
+</pre></div>
+</div>
+</div>
+<div class="section" id="inicializacion">
+<h2>Inicialización<a class="headerlink" href="#inicializacion" title="Permalink to this headline">¶</a></h2>
+<p>Para utilizar este servicio, se debe inicializar la API REST para inicializar el servidor y poder hacer llamadas a este. Para ello llamaremos llamaremos al módulo <strong>ApiRest.py</strong> desde una terminal en la carpeta raiz del proyecto de la siguiente manera:</p>
+<p>$ python ApiRest.py</p>
+<p>A partir de este punto podríamos llamar a las funciones del módulo <strong>Proxy.py</strong> para obtener los datos que pidamos.</p>
+</div>
+<div class="section" id="funciones-del-sistema">
+<h2>Funciones del Sistema<a class="headerlink" href="#funciones-del-sistema" title="Permalink to this headline">¶</a></h2>
+<p>Todas las funciones reciben <em>Strings</em> ya que es lo que se puede enviar mediante el protocolo HTTP, dentro de cada módulo se formateará cada valor a su correspondiente tipo.
+Las funciones estarán detalladas con más precision en la documentación del código, sin embargo es conveniente saber sus funcionalidades y llamadas básicas. Estas son las adelante descritas:</p>
+<div class="section" id="getservices">
+<h3>getServices()<a class="headerlink" href="#getservices" title="Permalink to this headline">¶</a></h3>
+<p>Función para obtener los servicios que están disponibles para utilizar.</p>
+</div>
+<div class="section" id="def-getimage-provider-kwargs">
+<h3>def getImage(provider, <a href="#id1"><span class="problematic" id="id2">**</span></a>kwargs)<a class="headerlink" href="#def-getimage-provider-kwargs" title="Permalink to this headline">¶</a></h3>
+<p>Función para obtener una imagen con sus metadatos. Se debe introducir un solo servicio del que se quiere obtener la imagen.</p>
+</div>
+<div class="section" id="getmetadata-point-kwargs">
+<h3>getMetadata(point, <a href="#id3"><span class="problematic" id="id4">**</span></a>kwargs)<a class="headerlink" href="#getmetadata-point-kwargs" title="Permalink to this headline">¶</a></h3>
+<p>Función para obtener los metadatos de las imágenes que coincidan con los parámetros. Se debe especificar un punto que se quiera que esté dentro de la imagen en formato “latitud,longitud”.</p>
+</div>
+<div class="section" id="def-getpreview-provider-id-kwargs">
+<h3>def getPreview(provider, id, <a href="#id5"><span class="problematic" id="id6">**</span></a>kwargs)<a class="headerlink" href="#def-getpreview-provider-id-kwargs" title="Permalink to this headline">¶</a></h3>
+<p>Función para obtener la previsualización de una imagen. Se debe indicar el servicio del que se pide la previsualización además del id de dicha imagen.</p>
+</div>
+</div>
+<div class="section" id="parametros-por-servicio">
+<h2>Parámetros por Servicio<a class="headerlink" href="#parametros-por-servicio" title="Permalink to this headline">¶</a></h2>
+<p>Los parámetros de estas funciones (<a href="#id7"><span class="problematic" id="id8">**</span></a>kwargs) difieren para cada servicio excepto getServices ya que cada uno acepta diferentes argumentos para obtener imágenes. Debido a esto, vamos a explicar los parámetros que acepta cada servicio para cada una de las funciones. En caso de no especificar algún parámetro, se utilizará su valor por defecto que se encuentra en el fichero <em>conf.json</em> en la carpeta raíz.</p>
+<div class="section" id="funciones-para-bing-maps">
+<h3>Funciones para Bing Maps<a class="headerlink" href="#funciones-para-bing-maps" title="Permalink to this headline">¶</a></h3>
+<p>Este servicio carece de la función <strong>getPreview</strong> ya que sus imágenes son relativamente pequeñas (hasta 2000x1500). Para las funciones <strong>getImage</strong> y <strong>getMetadata</strong> estos son los parámetros que se pueden incluir:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>size</dt><dd><ul>
+<li><p>Descripción: Tamaño en píxeles de la imagen.</p></li>
+<li><p>Formato: “altura,anchura”</p></li>
+<li><p>Ejemplo: “1000,1000”</p></li>
+<li><p>Máximo: “2000,1500”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>format</dt><dd><ul>
+<li><p>Descripción: Formato de la imagen.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>resolution</dt><dd><ul>
+<li><p>Descripción: Resolución máxima en metros/pixel de la imagen que queremos obtener.</p></li>
+<li><p>Ejemplo: “3.5”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>beforeDate</dt><dd><ul>
+<li><p>Descripción: Obtener únicamente imágenes anteriores a la fecha dada.</p></li>
+<li><p>Formato: “dd-mm-aaaa”</p></li>
+<li><p>Ejemplo: “12-09-2005”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>afterDate</dt><dd><ul>
+<li><p>Descripción: Obtener únicamente imágenes posteriores a la fecha dada.</p></li>
+<li><p>Formato: “dd-mm-aaaa”</p></li>
+<li><p>Ejemplo: “12-09-2005”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="funciones-para-google-maps">
+<h3>Funciones para Google Maps<a class="headerlink" href="#funciones-para-google-maps" title="Permalink to this headline">¶</a></h3>
+<p>Este servicio carece de la función <strong>getPreview</strong> ya que sus imágenes son relativamente pequeñas (hasta 1280x1280). Para las funciones <strong>getImage</strong> y <strong>getMetadata</strong> estos son los parámetros que se pueden incluir:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>size</dt><dd><ul>
+<li><p>Descripción: Tamaño en píxeles de la imagen.</p></li>
+<li><p>Formato: “altura,anchura”</p></li>
+<li><p>Ejemplo: “1000,1000”</p></li>
+<li><p>Máximo: “1280,1280”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>format</dt><dd><ul>
+<li><p>Descripción: Formato de la imagen.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="funciones-para-planet-labs">
+<h3>Funciones para Planet Labs<a class="headerlink" href="#funciones-para-planet-labs" title="Permalink to this headline">¶</a></h3>
+<p>Para la función <strong>getMetadata</strong> estos son los parámetros que se pueden incluir:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>resolution</dt><dd><ul>
+<li><p>Descripción: Resolución máxima en metros/pixel de la imagen que queremos obtener.</p></li>
+<li><p>Ejemplo: “3.5”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>beforeDate</dt><dd><ul>
+<li><p>Descripción: Obtener únicamente imágenes anteriores a la fecha dada.</p></li>
+<li><p>Formato: “dd-mm-aaaa”</p></li>
+<li><p>Ejemplo: “12-09-2005”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>afterDate</dt><dd><ul>
+<li><p>Descripción: Obtener únicamente imágenes posteriores a la fecha dada.</p></li>
+<li><p>Formato: “dd-mm-aaaa”</p></li>
+<li><p>Ejemplo: “12-09-2005”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>maxResults</dt><dd><ul>
+<li><p>Descripción: Número máximo de resultados que queremos obtener por servicio</p></li>
+<li><p>Ejemplo: “5”</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>itemTypes</dt><dd><ul>
+<li><p>Descripción: Tipos de imágenes que se quiere que se devuelvan</p></li>
+<li><p>Ejemplo: “PSScene4Band,PSOrthoTile”</p></li>
+<li><p><a class="reference external" href="https://developers.planet.com/docs/data/items-assets/">Tipos Disponibles</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Para las funciones <strong>getImage</strong> y <strong>getPreview</strong>, se debe introducir únicamente el id de la imagen que previamente hemos conseguido de sus metadatos ya que este servicio trabaja con identificadores.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Dependencies.html" class="btn btn-neutral float-right" title="Dependencies of the project" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Satellite Images Api Rest" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Alejandro de la Cruz López
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

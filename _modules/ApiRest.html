@@ -1,0 +1,609 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ApiRest &mdash; Satellite Images Api Rest  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Satellite Images Api Rest
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">User Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../UserGuide.html">User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../UserGuide.html#precondiciones">Precondiciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../UserGuide.html#inicializacion">Inicialización</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../UserGuide.html#funciones-del-sistema">Funciones del Sistema</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../UserGuide.html#getservices">getServices()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../UserGuide.html#def-getimage-provider-kwargs">def getImage(provider, **kwargs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../UserGuide.html#getmetadata-point-kwargs">getMetadata(point, **kwargs)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../UserGuide.html#def-getpreview-provider-id-kwargs">def getPreview(provider, id, **kwargs)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../UserGuide.html#parametros-por-servicio">Parámetros por Servicio</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../UserGuide.html#funciones-para-bing-maps">Funciones para Bing Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../UserGuide.html#funciones-para-google-maps">Funciones para Google Maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../UserGuide.html#funciones-para-planet-labs">Funciones para Planet Labs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Dependencies.html">Dependencies of the project</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Dependencies.html#system-packages">System packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Dependencies.html#external-packages">External packages</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ModuleAdditionGuide.html">Module Addition Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ModuleAdditionGuide.html#creacion-del-modulo">Creación del módulo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ModuleAdditionGuide.html#implementacion-del-modulo">Implementación del módulo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ModuleAdditionGuide.html#fichero-de-configuracion">Fichero de configuración</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ModuleAdditionGuide.html#documentacion">Documentación</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Python Code Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Proxy.html">Proxy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ApiRest.html">ApiRest</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Services</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../BingMaps.html">Bing Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../GoogleMaps.html">Google Maps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PlanetLabs.html">Planet Labs</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Utils</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Utils.html">Utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ApiExceptions.html">ApiExceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tests.html">Tests</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Satellite Images Api Rest</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>ApiRest</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for ApiRest</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Aplicación REST para la descarga de imágenes de distintos servicios</span>
+
+<span class="sd">Esta aplicación permite descargar imágenes por satélite de servicios</span>
+<span class="sd">como Google Maps o Bing Maps. Los módulos implementados son independientes</span>
+<span class="sd">y es posible añadir más de forma transparente.</span>
+
+<span class="sd">Example:</span>
+<span class="sd">    Para ejecutar este script se debe ejecutar en una terminal en la carpeta</span>
+<span class="sd">    donde se almacene este archivo el siguiente código:</span>
+
+<span class="sd">            $ python ApiRest.py</span>
+
+<span class="sd">    Tras esto se podrán realizar llamadas a la API desde el servidor:</span>
+
+<span class="sd">            http://localhost:5000/</span>
+
+<span class="sd">Attributes:</span>
+<span class="sd">    app(Flask): Instancia flask para dotar de servicios REST a la aplicación.</span>
+<span class="sd">    api(Api): Instancia de Api para añadir rutas de forma más simple a</span>
+<span class="sd">        la aplicación.</span>
+<span class="sd">    servicios(list[str]): Lista de servicios que están disponibles en la API.</span>
+<span class="sd">        Se leen del fichero conf.json en la misma carpeta que este fichero.</span>
+<span class="sd">    ruta_modulos(list[str]): Ruta a cada uno de los módulos. Se leen del fichero</span>
+<span class="sd">        conf.json</span>
+<span class="sd">    modulos(list[module]): Módulos importados para utilizarlos en este fichero.</span>
+<span class="sd">    callable_services(list[servicio]): Lista de instancias de las clases de cada</span>
+<span class="sd">        uno de los servicios disponibles. Utilizado para hacer las llamadas a las</span>
+<span class="sd">        distintas funciones de los módulos.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">make_response</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">request</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">send_file</span>
+<span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">from</span> <span class="nn">flask_restful</span> <span class="kn">import</span> <span class="n">Api</span><span class="p">,</span> <span class="n">Resource</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">importlib</span>
+<span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">from</span> <span class="nn">ApiExceptions</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">geojson</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">api</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">conf</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">servicios</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">ruta_modulos</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">modulos</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">callable_services</span> <span class="o">=</span> <span class="p">[]</span>
+
+
+<div class="viewcode-block" id="initialize"><a class="viewcode-back" href="../ApiRest.html#ApiRest.initialize">[docs]</a><span class="k">def</span> <span class="nf">initialize</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Función para inicializar los atributos de la aplicación</span>
+
+<span class="sd">        Inicializa los parámetros del fichero para acceder a estos</span>
+<span class="sd">        y poner en funcionamiento la API REST. Estos son: conf, servicios,</span>
+<span class="sd">        ruta_modulos, modulos, api, app, callable_services</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">conf</span><span class="p">,</span> <span class="n">servicios</span><span class="p">,</span> <span class="n">ruta_modulos</span><span class="p">,</span> <span class="n">modulos</span><span class="p">,</span> <span class="n">api</span><span class="p">,</span> <span class="n">app</span><span class="p">,</span> <span class="n">callable_services</span>
+
+    <span class="c1">#Abrimos y guardamos el fichero de configuración</span>
+    <span class="n">current_directory</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">current_directory</span><span class="p">,</span> <span class="s2">&quot;conf.json&quot;</span><span class="p">),</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">conf_file</span><span class="p">:</span>
+        <span class="n">conf</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">conf_file</span><span class="o">.</span><span class="n">read</span><span class="p">()))</span>
+
+    <span class="c1">#Obtenemos los nombres de los servicios(lista servicios),</span>
+    <span class="c1">#la ruta de los modulos(lista ruta_modulos)</span>
+    <span class="c1">#y los cargamos en memoria(lista modulos)</span>
+    <span class="k">for</span> <span class="n">servicio</span><span class="p">,</span> <span class="n">archivo</span> <span class="ow">in</span> <span class="n">conf</span><span class="p">[</span><span class="s1">&#39;servicios&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">servicios</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">servicio</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+        <span class="n">ruta_modulos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">archivo</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">modulo</span> <span class="ow">in</span> <span class="n">ruta_modulos</span><span class="p">:</span>
+        <span class="n">modulos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">modulo</span><span class="p">))</span>
+
+    <span class="c1">#Instanciamos las clases y las guardamos en callable_services</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">modulos</span><span class="p">)):</span>
+        <span class="n">class_names</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getmembers</span><span class="p">(</span><span class="n">modulos</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">inspect</span><span class="o">.</span><span class="n">isclass</span><span class="p">)</span>
+        <span class="n">class_name</span> <span class="o">=</span> <span class="p">[</span><span class="n">serv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">serv</span> <span class="ow">in</span> <span class="n">class_names</span> <span class="k">if</span> <span class="n">serv</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">servicios</span><span class="p">[</span><span class="n">x</span><span class="p">]][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">callable_services</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">class_name</span><span class="p">(</span><span class="n">conf</span><span class="p">[</span><span class="s1">&#39;keys&#39;</span><span class="p">][</span><span class="n">servicios</span><span class="p">[</span><span class="n">x</span><span class="p">]]))</span>
+
+    <span class="c1">#Creamos la Api Rest</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+    <span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+    <span class="c1">#Añadimos las rutas</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">Image</span><span class="p">,</span> <span class="s1">&#39;/getImage&#39;</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">Metadata</span><span class="p">,</span> <span class="s1">&#39;/getMetadata&#39;</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">Servicios</span><span class="p">,</span> <span class="s1">&#39;/getServices&#39;</span><span class="p">)</span>
+    <span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">ImagePreview</span><span class="p">,</span> <span class="s1">&#39;/getPreview&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Servicios"><a class="viewcode-back" href="../ApiRest.html#ApiRest.Servicios">[docs]</a><span class="k">class</span> <span class="nc">Servicios</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Clase para pedir la lista de servicios disponibles</span>
+
+<span class="sd">    Mediante el comando GET en la ruta **/getServices** se accederá</span>
+<span class="sd">    a la función get de esta clase que devuelve un diccionario</span>
+<span class="sd">    con la lista de servicios en la clave &#39;Servicios&#39;.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Servicios.get"><a class="viewcode-back" href="../ApiRest.html#ApiRest.Servicios.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">global</span> <span class="n">servicios</span>
+
+        <span class="k">return</span> <span class="n">make_response</span><span class="p">({</span><span class="s2">&quot;Servicios&quot;</span><span class="p">:</span> <span class="n">servicios</span><span class="p">},</span> <span class="mi">200</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="Image"><a class="viewcode-back" href="../ApiRest.html#ApiRest.Image">[docs]</a><span class="k">class</span> <span class="nc">Image</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Clase para obtener imágenes por satélite y sus metadatos de los servicios</span>
+
+<span class="sd">        Esta clase llama a la función getImage para obtener una imagen del servicio</span>
+<span class="sd">        especificado con los parámetros que se le hayan pasado en la consulta. Se puede</span>
+<span class="sd">        acceder mediante la ruta **/getImage**.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            args (dict[str-&gt;str])</span>
+<span class="sd">                Este parámetro se obtendrá de la consulta que se haga.</span>
+<span class="sd">                Cada uno de los parámetros tendrán funciones generales o específicas para uno</span>
+<span class="sd">                o más de los servicios. Se pueden insertar los siguientes parámetros:</span>
+
+<span class="sd">                - Obligatorio:</span>
+<span class="sd">                    - servicio</span>
+<span class="sd">                        - Descripción: Servicio del que se quiere obtener la imagen.</span>
+<span class="sd">                - Obligatorio uno de ellos:</span>
+<span class="sd">                    - id</span>
+<span class="sd">                        - Descripción: Id de la imagen</span>
+<span class="sd">                    - point</span>
+<span class="sd">                        - Descripción: Punto perteneciente a la imagen en latitud y longitud.</span>
+<span class="sd">                        - Formato: &quot;latitud,longitud&quot;</span>
+<span class="sd">                        - Ejemplo: &quot;41.800507792693544,-2.304528141507549&quot;</span>
+<span class="sd">                - Opcionales:</span>
+<span class="sd">                    - size</span>
+<span class="sd">                        - Descripción: Tamaño en píxeles de la imagen.</span>
+<span class="sd">                        - Formato: &quot;altura,anchura&quot;</span>
+<span class="sd">                        - Ejemplo: &quot;1000,1000&quot;</span>
+<span class="sd">                    - format</span>
+<span class="sd">                        - Descripción: Formato de la imagen.</span>
+<span class="sd">                    - resolution</span>
+<span class="sd">                        - Descripción: Resolución máxima en metros/pixel de la imagen que queremos obtener.</span>
+<span class="sd">                        - Ejemplo: &quot;3.5&quot;</span>
+<span class="sd">                    - beforeDate</span>
+<span class="sd">                        - Descripción: Obtener únicamente imágenes anteriores a la fecha dada.</span>
+<span class="sd">                        - Formato: &quot;dd-mm-aaaa&quot;</span>
+<span class="sd">                        - Ejemplo: &quot;12-09-2005&quot;</span>
+<span class="sd">                    - afterDate</span>
+<span class="sd">                        - Descripción: Obtener únicamente imágenes posteriores a la fecha dada.</span>
+<span class="sd">                        - Formato: &quot;dd-mm-aaaa&quot;</span>
+<span class="sd">                        - Ejemplo: &quot;12-09-2005&quot;</span>
+<span class="sd">                    - maxResults</span>
+<span class="sd">                        - Descripción: Número máximo de resultados que queremos obtener por servicio</span>
+<span class="sd">                        - Ejemplo: &quot;5&quot;</span>
+<span class="sd">                    - itemTypes</span>
+<span class="sd">                        - Descripción: Tipos de imágenes que se quiere que se devuelvan</span>
+<span class="sd">                        - Ejemplo: &quot;PSScene4Band,PSOrthoTile&quot;</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Response: Respuesta con la imagen solicitada en bytes con los metadatos</span>
+<span class="sd">            en la cabecera y el código HTTP 200.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Response: Respuesta con el estado de una imagen que se ha solicitado descargar</span>
+<span class="sd">            pero necesita tiempo su activación y el código HTTP 202.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Response: Respuesta con un mensaje de error si alguno ha ocurrido con</span>
+<span class="sd">            el código HTTP 400.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Image.get"><a class="viewcode-back" href="../ApiRest.html#ApiRest.Image.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">global</span> <span class="n">callable_services</span>
+        <span class="k">global</span> <span class="n">servicios</span>
+
+        <span class="c1">#Añadimos los parámetros por defecto a los parámetros del usuario</span>
+        <span class="n">user_param</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
+        <span class="n">final_parameters</span> <span class="o">=</span> <span class="n">conf</span><span class="p">[</span><span class="s1">&#39;defaultParameters&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">final_parameters</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">user_param</span><span class="p">)</span>
+
+        <span class="c1">#Obtenemos el indice del servicio solicitado</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">idx</span> <span class="o">=</span> <span class="n">servicios</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">final_parameters</span><span class="p">[</span><span class="s1">&#39;servicio&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">make_response</span><span class="p">(</span><span class="s2">&quot;El servicio &#39;</span><span class="si">{}</span><span class="s2">&#39; indicado no existe.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">final_parameters</span><span class="p">[</span><span class="s1">&#39;servicio&#39;</span><span class="p">]),</span> <span class="mi">400</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">make_response</span><span class="p">(</span><span class="s2">&quot;Se debe indicar el servicio del que se quiere obtener la imagen&quot;</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+
+        <span class="c1">#Hacemos la petición con la función getImage</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">resp</span><span class="p">,</span> <span class="n">metadata</span> <span class="o">=</span> <span class="n">callable_services</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">getImage</span><span class="p">(</span><span class="n">final_parameters</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">ActivatingException</span> <span class="k">as</span> <span class="n">ae</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">make_response</span><span class="p">(</span><span class="n">ae</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">202</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">ae</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">make_response</span><span class="p">(</span><span class="n">ae</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">400</span><span class="p">)</span>
+
+
+        <span class="c1">#Creamos la respuesta con la imagen y le añadimos los metadatos</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">make_response</span><span class="p">(</span><span class="n">send_file</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">resp</span><span class="p">),</span>
+                         <span class="n">mimetype</span><span class="o">=</span><span class="s1">&#39;application/octet-stream&#39;</span><span class="p">))</span>
+
+        <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;metadata&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">geojson</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">response</span></div></div>
+
+<div class="viewcode-block" id="Metadata"><a class="viewcode-back" href="../ApiRest.html#ApiRest.Metadata">[docs]</a><span class="k">class</span> <span class="nc">Metadata</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Clase para obtener metadatos de imágenes que coincidan con los parámetros</span>
+
+<span class="sd">        Esta clase llama a la función getMetadadata de uno o varios servicios para</span>
+<span class="sd">        obtener los metadatos de la imágenes coincidentes con los parámetros dados</span>
+<span class="sd">        en la consulta. Se puede acceder mediante la ruta **/getMetadata**.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            args (dict[str-&gt;str])</span>
+<span class="sd">                Este parámetro se obtendrá de la consulta que se haga.</span>
+<span class="sd">                Cada uno de los parámetros tendrán funciones generales o específicas para uno</span>
+<span class="sd">                o más de los servicios. Se pueden insertar los siguientes parámetros:</span>
+
+<span class="sd">                - Obligatorio:</span>
+<span class="sd">                    - point</span>
+<span class="sd">                        - Descripción: Punto perteneciente a la imagen en latitud y longitud.</span>
+<span class="sd">                        - Formato: &quot;latitud,longitud&quot;</span>
+<span class="sd">                        - Ejemplo: &quot;41.800507792693544,-2.304528141507549&quot;</span>
+<span class="sd">                - Opcional:</span>
+<span class="sd">                    - servicio</span>
+<span class="sd">                        - Descripción: Servicio  o servicios de los que se quieren obtener metadatos.</span>
+<span class="sd">                    - size</span>
+<span class="sd">                        - Descripción: Tamaño en píxeles de la imagen.</span>
+<span class="sd">                        - Formato: &quot;altura,anchura&quot;</span>
+<span class="sd">                        - Ejemplo: &quot;1000,1000&quot;</span>
+<span class="sd">                    - format</span>
+<span class="sd">                        - Descripción: Formato de la imagen.</span>
+<span class="sd">                    - resolution</span>
+<span class="sd">                        - Descripción: Resolución máxima en metros/pixel de la imagen que queremos obtener.</span>
+<span class="sd">                        - Ejemplo: &quot;3.5&quot;</span>
+<span class="sd">                    - beforeDate</span>
+<span class="sd">                        - Descripción: Obtener únicamente imágenes anteriores a la fecha dada.</span>
+<span class="sd">                        - Formato: &quot;dd-mm-aaaa&quot;</span>
+<span class="sd">                        - Ejemplo: &quot;12-09-2005&quot;</span>
+<span class="sd">                    - afterDate</span>
+<span class="sd">                        - Descripción: Obtener únicamente imágenes posteriores a la fecha dada.</span>
+<span class="sd">                        - Formato: &quot;dd-mm-aaaa&quot;</span>
+<span class="sd">                        - Ejemplo: &quot;12-09-2005&quot;</span>
+<span class="sd">                    - maxResults</span>
+<span class="sd">                        - Descripción: Resolución máxima en metros/pixel de la imagen que queremos obtener.</span>
+<span class="sd">                        - Ejemplo: &quot;3.5&quot;</span>
+<span class="sd">                    - itemTypes</span>
+<span class="sd">                        - Descripción: Tipos de imágenes que se quiere que se devuelvan</span>
+<span class="sd">                        - Ejemplo: &quot;PSScene4Band,PSOrthoTile&quot;</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Response: Respuesta con  con los metadatos en formato GeoJSON</span>
+<span class="sd">            y el código HTTP 200.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Response: Respuesta con un mensaje de error si alguno ha ocurrido con</span>
+<span class="sd">            el código HTTP 400.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Metadata.get"><a class="viewcode-back" href="../ApiRest.html#ApiRest.Metadata.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">global</span> <span class="n">callable_services</span>
+        <span class="k">global</span> <span class="n">servicios</span>
+
+        <span class="c1">#Añadimos los parámetros por defecto a los parámetros del usuario</span>
+        <span class="n">user_param</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
+        <span class="n">final_parameters</span> <span class="o">=</span> <span class="n">conf</span><span class="p">[</span><span class="s1">&#39;defaultParameters&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">final_parameters</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">user_param</span><span class="p">)</span>
+
+        <span class="c1">#Si no se especifican servicios se devuelven todos</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="s1">&#39;servicio&#39;</span> <span class="ow">in</span> <span class="n">final_parameters</span><span class="p">:</span>
+            <span class="n">final_parameters</span><span class="p">[</span><span class="s1">&#39;servicio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">servicios</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">final_parameters</span><span class="p">[</span><span class="s1">&#39;servicio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">final_parameters</span><span class="p">[</span><span class="s1">&#39;servicio&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+
+        <span class="c1">#Creamos una lista y almacenamos los metadatos de cada servicio</span>
+        <span class="n">metadata_dict</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">servicio</span> <span class="ow">in</span> <span class="n">final_parameters</span><span class="p">[</span><span class="s1">&#39;servicio&#39;</span><span class="p">]:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">servicio</span> <span class="ow">in</span> <span class="n">servicios</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">make_response</span><span class="p">(</span><span class="s2">&quot;El servicio &#39;</span><span class="si">{}</span><span class="s2">&#39; no existe en el sistema&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">servicio</span><span class="p">),</span> <span class="mi">400</span><span class="p">)</span>
+                <span class="n">idx</span> <span class="o">=</span> <span class="n">servicios</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">servicio</span><span class="p">)</span>
+                <span class="n">resp</span> <span class="o">=</span> <span class="n">callable_services</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">getMetadata</span><span class="p">(</span><span class="n">final_parameters</span><span class="p">)</span>
+                <span class="n">metadata_dict</span> <span class="o">+=</span> <span class="n">resp</span>
+            <span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">make_response</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">400</span><span class="p">)</span>
+
+        <span class="c1">#Creamos el GeoJson con los metadatos de los servicios</span>
+        <span class="n">geojson_dict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;FeatureCollection&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;features&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">metadata_dict</span><span class="p">]</span>
+        <span class="p">}</span>
+        <span class="n">geojson_str</span> <span class="o">=</span> <span class="n">geojson</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">geojson_dict</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">make_response</span><span class="p">(</span><span class="n">geojson_str</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="ImagePreview"><a class="viewcode-back" href="../ApiRest.html#ApiRest.ImagePreview">[docs]</a><span class="k">class</span> <span class="nc">ImagePreview</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Clase para obtener la previsualización de una imagen dado su id</span>
+
+<span class="sd">        Esta clase llama a la función getPreview para obtener una imagen del servicio</span>
+<span class="sd">        especificado con el id especificado en la consulta. Se puede acceder mediante</span>
+<span class="sd">        la ruta **/getPreview**.</span>
+
+<span class="sd">        Parameters:</span>
+<span class="sd">            args (dict[str-&gt;str]):</span>
+<span class="sd">                Este parámetro se obtendrá de la consulta que se haga.</span>
+<span class="sd">                Se pueden incluir los siguientes parámetros en la consulta:</span>
+
+<span class="sd">                - Obligatorio:</span>
+<span class="sd">                    - servicio</span>
+<span class="sd">                        - Tipo: str</span>
+<span class="sd">                        - Descripción: Servicio del que se quiere obtener la imagen.</span>
+<span class="sd">                    - id.</span>
+<span class="sd">                        - Tipo: str</span>
+<span class="sd">                        - Descripción: Id de la imagen que se quiere previsualizar</span>
+<span class="sd">                - Opcional:</span>
+<span class="sd">                    -size</span>
+<span class="sd">                        - Tipo: str</span>
+<span class="sd">                        - Descripción: Altura y anchura en píxeles de la imagen</span>
+<span class="sd">                        - Ejemplo: &quot;2048,2048&quot;.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Response: Respuesta con la imagen solicitada en bytes con los metadatos</span>
+<span class="sd">            en la cabecera y el código HTTP 200.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Response: Respuesta con un mensaje de error si alguno ha ocurrido con</span>
+<span class="sd">            el código HTTP 400.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="ImagePreview.get"><a class="viewcode-back" href="../ApiRest.html#ApiRest.ImagePreview.get">[docs]</a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="k">global</span> <span class="n">callable_services</span>
+        <span class="k">global</span> <span class="n">servicios</span>
+
+        <span class="c1">#Añadimos los parámetros por defecto a los parámetros del usuario</span>
+        <span class="n">user_param</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="p">)</span>
+        <span class="n">final_parameters</span> <span class="o">=</span> <span class="n">conf</span><span class="p">[</span><span class="s1">&#39;defaultParameters&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">final_parameters</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">user_param</span><span class="p">)</span>
+
+        <span class="c1">#Obtenemos el indice del servicio solicitado</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">idx</span> <span class="o">=</span> <span class="n">servicios</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">final_parameters</span><span class="p">[</span><span class="s1">&#39;servicio&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">make_response</span><span class="p">(</span><span class="s2">&quot;El servicio indicado no existe.&quot;</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">make_response</span><span class="p">(</span><span class="s2">&quot;Se debe indicar el servicio del que se quiere obtener la imagen&quot;</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+
+        <span class="c1">#Hacemos la petición con la función getPreview</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">callable_services</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="s1">&#39;getPreview&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">make_response</span><span class="p">(</span><span class="s2">&quot;El servicio &#39;</span><span class="si">{}</span><span class="s2">&#39; no puede acceder &quot;</span>
+                                 <span class="s2">&quot;a una previsualización.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">final_parameters</span><span class="p">[</span><span class="s1">&#39;servicio&#39;</span><span class="p">]),</span> <span class="mi">400</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">resp</span> <span class="o">=</span> <span class="n">callable_services</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">getPreview</span><span class="p">(</span><span class="n">final_parameters</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">ApiException</span> <span class="k">as</span> <span class="n">ae</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">make_response</span><span class="p">(</span><span class="n">ae</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">400</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">ParametersException</span> <span class="k">as</span> <span class="n">pe</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">make_response</span><span class="p">(</span><span class="n">pe</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">400</span><span class="p">)</span>
+
+
+        <span class="c1">#Creamos la respuesta con la imagen y le añadimos los metadatos</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">make_response</span><span class="p">(</span><span class="n">send_file</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">resp</span><span class="p">),</span>
+                                           <span class="n">mimetype</span><span class="o">=</span><span class="s1">&#39;application/octet-stream&#39;</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">response</span></div></div>
+
+
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">initialize</span><span class="p">()</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Alejandro de la Cruz López
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

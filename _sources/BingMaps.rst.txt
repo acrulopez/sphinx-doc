@@ -1,0 +1,9 @@
+Bing Maps
+================
+
+.. automodule:: BingMaps.BingMaps  
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+

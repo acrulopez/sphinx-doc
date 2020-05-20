@@ -1,0 +1,153 @@
+************
+User Guide
+************
+
+Precondiciones
+=====================
+Para utilizar el sistema, debe existir un fichero de configuración *conf.json* en la carpeta raíz del proyecto. En este se especifica el servidor en el que se aloja la aplicación REST bajo la clave "server", los servicios disponibles y la ruta de sus módulos bajo la clave "servicios", las claves para acceder a estos servicios y los parámetros por defecto que utilizarán los servicios a los que se hagan llamadas en caso de no introducir dichos datos. Un ejemplo de este fichero sería:
+
+.. code-block:: text
+
+   {
+  "server": "http://localhost:5000/",
+  "servicios":{
+	"bingmaps":"BingMaps/BingMaps",
+	"googlemaps": "GoogleMaps/GoogleMaps",
+	"planetlabs": "PlanetLabs/PlanetLabs"
+  },
+  "keys":{
+	"bingmaps":"XXXXXXXXXXXXXXXXXXXXXXXXXX",
+	"googlemaps": "XXXXXXXXXXXXXXXXXXXXXXXXXX",
+	"planetlabs": "XXXXXXXXXXXXXXXXXXXXXXXXXX"
+  },
+  "defaultParameters":{
+		"size": "640,640",
+		"resolution": "35",
+		"maxResults": "1",
+		"format": "png",
+		"beforeDate": "31-12-2040",
+		"afterDate":"01-01-1970"
+		}
+   }
+
+
+Inicialización
+=====================
+Para utilizar este servicio, se debe inicializar la API REST para inicializar el servidor y poder hacer llamadas a este. Para ello llamaremos llamaremos al módulo **ApiRest.py** desde una terminal en la carpeta raiz del proyecto de la siguiente manera:
+
+$ python ApiRest.py
+
+A partir de este punto podríamos llamar a las funciones del módulo **Proxy.py** para obtener los datos que pidamos.
+
+
+
+Funciones del Sistema
+=====================
+
+Todas las funciones reciben *Strings* ya que es lo que se puede enviar mediante el protocolo HTTP, dentro de cada módulo se formateará cada valor a su correspondiente tipo.
+Las funciones estarán detalladas con más precision en la documentación del código, sin embargo es conveniente saber sus funcionalidades y llamadas básicas. Estas son las adelante descritas:
+
+
+getServices()
+--------------
+Función para obtener los servicios que están disponibles para utilizar.
+
+
+def getImage(provider, **kwargs)
+--------------------------------
+Función para obtener una imagen con sus metadatos. Se debe introducir un solo servicio del que se quiere obtener la imagen.
+
+
+getMetadata(point, **kwargs)
+----------------------------
+Función para obtener los metadatos de las imágenes que coincidan con los parámetros. Se debe especificar un punto que se quiera que esté dentro de la imagen en formato "latitud,longitud".
+
+
+def getPreview(provider, id, **kwargs)
+--------------------------------------
+Función para obtener la previsualización de una imagen. Se debe indicar el servicio del que se pide la previsualización además del id de dicha imagen.
+
+
+Parámetros por Servicio
+=======================
+
+Los parámetros de estas funciones (**kwargs) difieren para cada servicio excepto getServices ya que cada uno acepta diferentes argumentos para obtener imágenes. Debido a esto, vamos a explicar los parámetros que acepta cada servicio para cada una de las funciones. En caso de no especificar algún parámetro, se utilizará su valor por defecto que se encuentra en el fichero *conf.json* en la carpeta raíz.
+
+
+Funciones para Bing Maps
+--------------------------
+
+Este servicio carece de la función **getPreview** ya que sus imágenes son relativamente pequeñas (hasta 2000x1500). Para las funciones **getImage** y **getMetadata** estos son los parámetros que se pueden incluir:
+
+* size
+   * Descripción: Tamaño en píxeles de la imagen.
+   * Formato: "altura,anchura"
+   * Ejemplo: "1000,1000"
+   * Máximo: "2000,1500"
+* format
+   * Descripción: Formato de la imagen.
+* resolution
+   * Descripción: Resolución máxima en metros/pixel de la imagen que queremos obtener.
+   * Ejemplo: "3.5"
+* beforeDate
+   * Descripción: Obtener únicamente imágenes anteriores a la fecha dada.
+   * Formato: "dd-mm-aaaa"
+   * Ejemplo: "12-09-2005"
+* afterDate
+   * Descripción: Obtener únicamente imágenes posteriores a la fecha dada.
+   * Formato: "dd-mm-aaaa"
+   * Ejemplo: "12-09-2005"
+   
+   
+Funciones para Google Maps
+--------------------------
+
+Este servicio carece de la función **getPreview** ya que sus imágenes son relativamente pequeñas (hasta 1280x1280). Para las funciones **getImage** y **getMetadata** estos son los parámetros que se pueden incluir:
+
+* size
+   * Descripción: Tamaño en píxeles de la imagen.
+   * Formato: "altura,anchura"
+   * Ejemplo: "1000,1000"
+   * Máximo: "1280,1280"
+* format
+   * Descripción: Formato de la imagen.
+   
+
+Funciones para Planet Labs
+--------------------------
+
+Para la función **getMetadata** estos son los parámetros que se pueden incluir:
+
+* resolution
+   * Descripción: Resolución máxima en metros/pixel de la imagen que queremos obtener.
+   * Ejemplo: "3.5"
+* beforeDate
+   * Descripción: Obtener únicamente imágenes anteriores a la fecha dada.
+   * Formato: "dd-mm-aaaa"
+   * Ejemplo: "12-09-2005"
+* afterDate
+   * Descripción: Obtener únicamente imágenes posteriores a la fecha dada.
+   * Formato: "dd-mm-aaaa"
+   * Ejemplo: "12-09-2005"
+* maxResults
+   * Descripción: Número máximo de resultados que queremos obtener por servicio
+   * Ejemplo: "5"
+* itemTypes
+   * Descripción: Tipos de imágenes que se quiere que se devuelvan
+   * Ejemplo: "PSScene4Band,PSOrthoTile"
+   * `Tipos Disponibles <https://developers.planet.com/docs/data/items-assets/>`_
+
+
+Para las funciones **getImage** y **getPreview**, se debe introducir únicamente el id de la imagen que previamente hemos conseguido de sus metadatos ya que este servicio trabaja con identificadores.
+  
+
+
+
+
+
+
+
+
+
+
+
